@@ -3,7 +3,6 @@ package com.wasu.hutool.core.io.resource;
 import com.wasu.hutool.core.io.FileUtil;
 import com.wasu.hutool.core.util.StrUtil;
 import com.wasu.hutool.core.util.URLUtil;
-
 import java.io.File;
 import java.nio.file.Path;
 

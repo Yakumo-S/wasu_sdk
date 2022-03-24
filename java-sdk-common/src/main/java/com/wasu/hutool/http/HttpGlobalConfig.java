@@ -1,7 +1,6 @@
 package com.wasu.hutool.http;
 
 import com.wasu.hutool.http.cookie.GlobalCookieManager;
-
 import java.net.CookieManager;
 
 /**

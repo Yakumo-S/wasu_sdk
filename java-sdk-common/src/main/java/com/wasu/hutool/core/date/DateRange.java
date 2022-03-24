@@ -1,7 +1,6 @@
 package com.wasu.hutool.core.date;
 
 import com.wasu.hutool.core.lang.Range;
-
 import java.util.Date;
 
 /**

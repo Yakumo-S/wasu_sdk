@@ -1,7 +1,7 @@
 package com.wasu.unmarshaller;
 
-import com.wasu.icc.exception.ClientException;
-import com.wasu.http.IccResponse;
+import com.wasu.http.IotResponse;
+import com.wasu.iot.exception.ClientException;
 
 /**
  * 协议转换接口
@@ -19,5 +19,5 @@ public interface Unmarshaller {
    * @return 返回转换对象
    * @throws ClientException 异常信息
    */
-  <T extends IccResponse> T unmarshal(Class<T> clas, String content) throws ClientException;
+  <T extends IotResponse> T unmarshal(Class<T> clas, String content) throws ClientException;
 }

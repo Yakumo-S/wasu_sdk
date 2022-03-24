@@ -3,7 +3,6 @@ package com.wasu.hutool.core.codec;
 import com.wasu.hutool.core.lang.Assert;
 import com.wasu.hutool.core.util.CharUtil;
 import com.wasu.hutool.core.util.StrUtil;
-
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;

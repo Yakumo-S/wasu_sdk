@@ -9,7 +9,7 @@
     <version>1.0.9</version>
     <name>icc-sdk</name>
     <description>
-        Dahua ICC Open API SDK for Java
+        Wasu Iot Open API SDK for Java
     </description>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -19,8 +19,6 @@
         <module>java-sdk-common</module>
         <module>java-sdk-core</module>
         <module>java-sdk-oauth</module>
-        <module>java-sdk-brm</module>
-        <module>java-sdk-event</module>
     </modules>
     <scm>
         <url>git@yfgitlab.dahuatech.com:Software-ESD-EBS/Evo-Api/Icc-Open-Api.git</url>

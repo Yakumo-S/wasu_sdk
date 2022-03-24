@@ -1,7 +1,6 @@
 package com.wasu.hutool.core.lang;
 
 import com.wasu.hutool.core.thread.lock.NoLock;
-
 import java.io.Serializable;
 import java.util.Iterator;
 import java.util.NoSuchElementException;

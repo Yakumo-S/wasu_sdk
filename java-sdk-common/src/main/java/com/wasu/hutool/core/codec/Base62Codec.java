@@ -1,7 +1,6 @@
 package com.wasu.hutool.core.codec;
 
 import com.wasu.hutool.core.util.ArrayUtil;
-
 import java.io.ByteArrayOutputStream;
 import java.io.Serializable;
 

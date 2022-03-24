@@ -2,8 +2,12 @@ package com.wasu.hutool.core.bean;
 
 import com.wasu.hutool.core.lang.Assert;
 import com.wasu.hutool.core.map.CaseInsensitiveMap;
-import com.wasu.hutool.core.util.*;
-
+import com.wasu.hutool.core.util.BooleanUtil;
+import com.wasu.hutool.core.util.ClassUtil;
+import com.wasu.hutool.core.util.ModifierUtil;
+import com.wasu.hutool.core.util.ReflectUtil;
+import com.wasu.hutool.core.util.StrUtil;
+import com.wasu.hutool.core.util.TypeUtil;
 import java.io.Serializable;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;

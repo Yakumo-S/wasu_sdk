@@ -9,11 +9,15 @@ import com.wasu.hutool.core.util.StrUtil;
 import com.wasu.hutool.core.util.TypeUtil;
 import com.wasu.hutool.json.serialize.GlobalSerializeMapping;
 import com.wasu.hutool.json.serialize.JSONSerializer;
-
 import java.io.IOException;
 import java.io.StringWriter;
 import java.io.Writer;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Iterator;
+import java.util.List;
+import java.util.ListIterator;
+import java.util.RandomAccess;
 
 /**
  * JSON数组<br>

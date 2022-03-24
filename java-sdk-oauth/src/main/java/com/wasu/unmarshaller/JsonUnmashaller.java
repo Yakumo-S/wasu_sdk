@@ -1,9 +1,9 @@
 package com.wasu.unmarshaller;
 
+import com.wasu.http.IotResponse;
 import com.wasu.hutool.json.JSONException;
-import com.wasu.icc.exception.ClientException;
-import com.wasu.http.IccResponse;
-import com.wasu.icc.util.BeanUtil;
+import com.wasu.iot.exception.ClientException;
+import com.wasu.iot.util.BeanUtil;
 
 /**
  * json 转换
@@ -14,7 +14,7 @@ import com.wasu.icc.util.BeanUtil;
 public class JsonUnmashaller implements Unmarshaller {
 
   @Override
-  public <T extends IccResponse> T unmarshal(Class<T> clazz, String content)
+  public <T extends IotResponse> T unmarshal(Class<T> clazz, String content)
       throws ClientException {
     try {
       return BeanUtil.toBean(content, clazz);

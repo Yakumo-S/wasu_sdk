@@ -1,6 +1,10 @@
 package com.wasu.hutool.core.util;
 
-import java.lang.ref.*;
+import java.lang.ref.PhantomReference;
+import java.lang.ref.Reference;
+import java.lang.ref.ReferenceQueue;
+import java.lang.ref.SoftReference;
+import java.lang.ref.WeakReference;
 
 /**
  * 引用工具类，主要针对{@link Reference} 工具化封装<br>

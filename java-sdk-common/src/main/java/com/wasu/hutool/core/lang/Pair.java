@@ -1,7 +1,6 @@
 package com.wasu.hutool.core.lang;
 
 import com.wasu.hutool.core.clone.CloneSupport;
-
 import java.io.Serializable;
 
 /**

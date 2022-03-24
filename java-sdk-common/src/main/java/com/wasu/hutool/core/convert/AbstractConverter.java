@@ -4,7 +4,6 @@ import com.wasu.hutool.core.util.ArrayUtil;
 import com.wasu.hutool.core.util.CharUtil;
 import com.wasu.hutool.core.util.ClassUtil;
 import com.wasu.hutool.core.util.StrUtil;
-
 import java.io.Serializable;
 import java.util.Map;
 

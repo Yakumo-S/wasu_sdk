@@ -2,7 +2,6 @@ package com.wasu.hutool.json;
 
 import com.wasu.hutool.core.util.CharUtil;
 import com.wasu.hutool.core.util.XmlUtil;
-
 import java.util.Iterator;
 
 /**

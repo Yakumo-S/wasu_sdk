@@ -1,7 +1,6 @@
 package com.wasu.hutool.core.map;
 
 import com.wasu.hutool.core.util.StrUtil;
-
 import java.util.HashMap;
 import java.util.Map;
 

@@ -1,6 +1,6 @@
 package com.wasu.model.v202010;
 
-import com.wasu.http.IccResponse;
+import com.wasu.http.IotResponse;
 
 /**
  * 注销授权信息,无data信息
@@ -8,4 +8,4 @@ import com.wasu.http.IccResponse;
  * @author 232676
  * @since 1.0.0 2020-10-24 20:59:11
  */
-public class OauthLogoutResponse extends IccResponse {}
+public class OauthLogoutResponse extends IotResponse {}

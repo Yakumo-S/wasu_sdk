@@ -1,7 +1,6 @@
 package com.wasu.hutool.json.serialize;
 
 import com.wasu.hutool.json.JSON;
-
 import java.lang.reflect.Type;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;

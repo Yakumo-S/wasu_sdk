@@ -1,7 +1,6 @@
 package com.wasu.hutool.core.math;
 
 import com.wasu.hutool.core.util.NumberUtil;
-
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Arrays;

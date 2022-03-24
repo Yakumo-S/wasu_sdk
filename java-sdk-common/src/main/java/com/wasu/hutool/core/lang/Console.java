@@ -1,12 +1,11 @@
 package com.wasu.hutool.core.lang;
 
-import com.wasu.hutool.core.util.CharUtil;
-import com.wasu.hutool.core.util.StrUtil;
-
-import java.util.Scanner;
-
 import static java.lang.System.err;
 import static java.lang.System.out;
+
+import com.wasu.hutool.core.util.CharUtil;
+import com.wasu.hutool.core.util.StrUtil;
+import java.util.Scanner;
 
 /**
  * 命令行（控制台）工具方法类<br>

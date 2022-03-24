@@ -1,15 +1,14 @@
 package com.wasu.http;
 
 import com.wasu.hutool.http.Method;
-import com.wasu.icc.exception.ClientException;
-
+import com.wasu.iot.exception.ClientException;
 import java.util.Map;
 
 /**
  * @author 232676
  * @since 1.0.0 2020-10-24 20:59:11
  */
-public abstract class AbstractIccRequest<T extends IccResponse> extends IccHttpHttpRequest {
+public abstract class AbstractIccRequest<T extends IotResponse> extends IotHttpRequest {
   public AbstractIccRequest(String url, Method method) throws ClientException {
     super(url, method, Boolean.TRUE);
   }

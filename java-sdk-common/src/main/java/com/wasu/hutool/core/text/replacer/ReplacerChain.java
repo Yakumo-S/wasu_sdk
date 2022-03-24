@@ -2,7 +2,6 @@ package com.wasu.hutool.core.text.replacer;
 
 import com.wasu.hutool.core.lang.Chain;
 import com.wasu.hutool.core.text.StrBuilder;
-
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;

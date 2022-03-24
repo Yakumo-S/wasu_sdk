@@ -3,7 +3,6 @@ package com.wasu.hutool.core.codec;
 import com.wasu.hutool.core.io.FileUtil;
 import com.wasu.hutool.core.io.IoUtil;
 import com.wasu.hutool.core.util.CharsetUtil;
-
 import java.io.File;
 import java.io.InputStream;
 import java.io.OutputStream;

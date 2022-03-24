@@ -1,7 +1,6 @@
 package com.wasu.hutool.core.lang.copier;
 
 import com.wasu.hutool.core.lang.Filter;
-
 import java.io.Serializable;
 
 /**

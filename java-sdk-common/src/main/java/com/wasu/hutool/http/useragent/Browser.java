@@ -2,7 +2,6 @@ package com.wasu.hutool.http.useragent;
 
 import com.wasu.hutool.core.collection.CollUtil;
 import com.wasu.hutool.core.util.ReUtil;
-
 import java.util.List;
 import java.util.regex.Pattern;
 

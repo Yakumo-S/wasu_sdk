@@ -3,7 +3,6 @@ package com.wasu.hutool.core.io.watch.watchers;
 import com.wasu.hutool.core.collection.CollectionUtil;
 import com.wasu.hutool.core.io.watch.Watcher;
 import com.wasu.hutool.core.lang.Chain;
-
 import java.nio.file.Path;
 import java.nio.file.WatchEvent;
 import java.util.Iterator;

@@ -2,7 +2,6 @@ package com.wasu.hutool.core.thread;
 
 import com.wasu.hutool.core.builder.Builder;
 import com.wasu.hutool.core.util.StrUtil;
-
 import java.lang.Thread.UncaughtExceptionHandler;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ThreadFactory;

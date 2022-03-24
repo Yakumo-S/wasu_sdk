@@ -6,7 +6,6 @@ import com.wasu.hutool.core.io.IoUtil;
 import com.wasu.hutool.core.util.CharsetUtil;
 import com.wasu.hutool.core.util.ObjectUtil;
 import com.wasu.hutool.core.util.URLUtil;
-
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.InputStream;

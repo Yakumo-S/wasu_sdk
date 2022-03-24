@@ -6,12 +6,16 @@ import com.wasu.hutool.core.text.StrBuilder;
 import com.wasu.hutool.core.util.CharUtil;
 import com.wasu.hutool.core.util.ObjectUtil;
 import com.wasu.hutool.core.util.StrUtil;
-
 import java.io.Closeable;
 import java.io.IOException;
 import java.io.Reader;
 import java.io.Serializable;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Objects;
 
 /**
  * CSV行解析器，参考：FastCSV

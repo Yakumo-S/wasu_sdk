@@ -4,7 +4,6 @@ import com.wasu.hutool.core.date.DateUtil;
 import com.wasu.hutool.core.util.ClassLoaderUtil;
 import com.wasu.hutool.core.util.RandomUtil;
 import com.wasu.hutool.core.util.StrUtil;
-
 import java.lang.management.ManagementFactory;
 import java.net.NetworkInterface;
 import java.nio.ByteBuffer;

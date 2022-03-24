@@ -2,8 +2,7 @@ package com.wasu.hutool.core.swing;
 
 import com.wasu.hutool.core.io.IORuntimeException;
 import com.wasu.hutool.core.util.URLUtil;
-
-import java.awt.*;
+import java.awt.Desktop;
 import java.io.File;
 import java.io.IOException;
 import java.net.URI;

@@ -1,6 +1,6 @@
 package com.wasu.constant;
 
-import com.wasu.profile.IccProfile;
+import com.wasu.profile.IotProfile;
 
 /**
  * @author 232676
@@ -42,11 +42,11 @@ public class OauthConstant {
     String brmName = "evo-brm";
     String brmVersion = "1.0.0";
     // 加载远程版本信息
-    if (!initVersionFromBrm && IccProfile.systemVersionMap.containsKey(brmName)) {
-      brmVersion = IccProfile.systemVersionMap.get(brmName);
+    if (!initVersionFromBrm && IotProfile.systemVersionMap.containsKey(brmName)) {
+      brmVersion = IotProfile.systemVersionMap.get(brmName);
       initVersionFromBrm = true;
     }
-    return String.format(IccProfile.URL_SCHEME + url, brmVersion);
+    return String.format(IotProfile.URL_SCHEME + url, brmVersion);
   }
 
   /**
@@ -55,11 +55,11 @@ public class OauthConstant {
    */
   public static String url(String url) {
     // 加载远程版本信息
-    if (!initVersionFromBrm && IccProfile.systemVersionMap.containsKey(SYSTEM_NAME)) {
-      version = IccProfile.systemVersionMap.get(SYSTEM_NAME);
+    if (!initVersionFromBrm && IotProfile.systemVersionMap.containsKey(SYSTEM_NAME)) {
+      version = IotProfile.systemVersionMap.get(SYSTEM_NAME);
       initVersionFromBrm = true;
     }
-    return String.format(IccProfile.URL_SCHEME + url, version);
+    return String.format(IotProfile.URL_SCHEME + url, version);
   }
 
   /** 客户端类型 */

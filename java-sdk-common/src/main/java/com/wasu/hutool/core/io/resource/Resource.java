@@ -1,7 +1,6 @@
 package com.wasu.hutool.core.io.resource;
 
 import com.wasu.hutool.core.io.IORuntimeException;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;

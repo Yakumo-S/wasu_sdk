@@ -9,14 +9,17 @@ import com.wasu.hutool.core.text.StrBuilder;
 import com.wasu.hutool.core.text.StrFormatter;
 import com.wasu.hutool.core.text.StrSpliter;
 import com.wasu.hutool.core.text.TextSimilarity;
-
 import java.io.StringReader;
 import java.io.StringWriter;
 import java.nio.ByteBuffer;
 import java.nio.charset.Charset;
 import java.text.MessageFormat;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
 import java.util.Map.Entry;
+import java.util.Set;
 import java.util.regex.Pattern;
 
 /**

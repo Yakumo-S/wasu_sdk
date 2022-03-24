@@ -7,13 +7,16 @@ import com.wasu.hutool.core.exceptions.UtilException;
 import com.wasu.hutool.core.io.FastByteArrayOutputStream;
 import com.wasu.hutool.core.io.IoUtil;
 import com.wasu.hutool.core.map.MapUtil;
-
 import java.io.ByteArrayInputStream;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.lang.reflect.Array;
-import java.util.*;
+import java.util.Collection;
+import java.util.Enumeration;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Objects;
 
 /**
  * 对象工具类，包括判空、克隆、序列化等操作

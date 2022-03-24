@@ -2,7 +2,6 @@ package com.wasu.hutool.core.builder;
 
 import com.wasu.hutool.core.lang.Assert;
 import com.wasu.hutool.core.util.ArrayUtil;
-
 import java.lang.reflect.AccessibleObject;
 import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;

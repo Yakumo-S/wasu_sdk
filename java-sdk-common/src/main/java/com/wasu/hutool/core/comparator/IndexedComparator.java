@@ -1,7 +1,6 @@
 package com.wasu.hutool.core.comparator;
 
 import com.wasu.hutool.core.util.ArrayUtil;
-
 import java.util.Comparator;
 
 /**

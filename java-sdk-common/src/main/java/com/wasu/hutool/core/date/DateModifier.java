@@ -1,7 +1,6 @@
 package com.wasu.hutool.core.date;
 
 import com.wasu.hutool.core.util.ArrayUtil;
-
 import java.util.Calendar;
 
 /**

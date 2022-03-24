@@ -1,7 +1,6 @@
 package com.wasu.hutool.crypto.digest;
 
 import com.wasu.hutool.core.util.CharsetUtil;
-
 import java.security.SecureRandom;
 
 /**

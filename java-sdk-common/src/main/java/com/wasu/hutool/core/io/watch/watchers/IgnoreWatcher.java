@@ -1,7 +1,6 @@
 package com.wasu.hutool.core.io.watch.watchers;
 
 import com.wasu.hutool.core.io.watch.Watcher;
-
 import java.nio.file.Path;
 import java.nio.file.WatchEvent;
 

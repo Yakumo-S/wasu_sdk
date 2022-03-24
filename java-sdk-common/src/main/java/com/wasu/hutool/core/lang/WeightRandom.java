@@ -3,7 +3,6 @@ package com.wasu.hutool.core.lang;
 import com.wasu.hutool.core.collection.CollUtil;
 import com.wasu.hutool.core.map.MapUtil;
 import com.wasu.hutool.core.util.RandomUtil;
-
 import java.io.Serializable;
 import java.util.Random;
 import java.util.SortedMap;

@@ -1,6 +1,6 @@
 package com.wasu.hutool.core.swing.clipboard;
 
-import java.awt.*;
+import java.awt.Image;
 import java.awt.datatransfer.DataFlavor;
 import java.awt.datatransfer.Transferable;
 import java.awt.datatransfer.UnsupportedFlavorException;

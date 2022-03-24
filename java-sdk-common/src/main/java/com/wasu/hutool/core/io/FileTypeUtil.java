@@ -1,7 +1,6 @@
 package com.wasu.hutool.core.io;
 
 import com.wasu.hutool.core.util.StrUtil;
-
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.InputStream;

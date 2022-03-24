@@ -1,6 +1,6 @@
 package com.wasu.hutool.core.util;
 
-import java.awt.*;
+import java.awt.Color;
 import java.nio.charset.Charset;
 
 /**

@@ -4,7 +4,6 @@ import com.wasu.hutool.core.collection.ConcurrentHashSet;
 import com.wasu.hutool.core.io.watch.Watcher;
 import com.wasu.hutool.core.lang.Assert;
 import com.wasu.hutool.core.thread.ThreadUtil;
-
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.WatchEvent;

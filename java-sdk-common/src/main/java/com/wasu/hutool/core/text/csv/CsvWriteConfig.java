@@ -1,7 +1,6 @@
 package com.wasu.hutool.core.text.csv;
 
 import com.wasu.hutool.core.util.CharUtil;
-
 import java.io.Serializable;
 
 /**

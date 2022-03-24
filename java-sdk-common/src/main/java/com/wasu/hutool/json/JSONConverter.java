@@ -10,7 +10,6 @@ import com.wasu.hutool.core.util.StrUtil;
 import com.wasu.hutool.core.util.TypeUtil;
 import com.wasu.hutool.json.serialize.GlobalSerializeMapping;
 import com.wasu.hutool.json.serialize.JSONDeserializer;
-
 import java.lang.reflect.Type;
 import java.util.List;
 

@@ -1,6 +1,6 @@
 package com.wasu.model.v202010;
 
-import com.wasu.http.IccResponse;
+import com.wasu.http.IotResponse;
 
 /**
  * 客户端认证授权
@@ -8,7 +8,7 @@ import com.wasu.http.IccResponse;
  * @author 232676
  * @since 1.0.0 2020-10-24 20:59:11
  */
-public class OauthClientAuthResponse extends IccResponse {
+public class OauthClientAuthResponse extends IotResponse {
   private IccClientToken data;
 
   public IccClientToken getData() {

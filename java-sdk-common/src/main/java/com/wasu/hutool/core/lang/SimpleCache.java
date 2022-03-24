@@ -1,7 +1,6 @@
 package com.wasu.hutool.core.lang;
 
 import com.wasu.hutool.core.lang.func.Func0;
-
 import java.io.Serializable;
 import java.util.Map;
 import java.util.WeakHashMap;

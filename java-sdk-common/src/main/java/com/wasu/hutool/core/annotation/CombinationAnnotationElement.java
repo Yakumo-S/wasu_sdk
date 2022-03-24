@@ -1,11 +1,18 @@
 package com.wasu.hutool.core.annotation;
 
 import com.wasu.hutool.core.collection.CollUtil;
-
 import java.io.Serializable;
-import java.lang.annotation.*;
+import java.lang.annotation.Annotation;
+import java.lang.annotation.Documented;
+import java.lang.annotation.Inherited;
+import java.lang.annotation.Retention;
+import java.lang.annotation.Target;
 import java.lang.reflect.AnnotatedElement;
-import java.util.*;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Set;
 
 /**
  * 组合注解 对JDK的原生注解机制做一个增强，支持类似Spring的组合注解。<br>

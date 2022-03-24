@@ -1,7 +1,7 @@
 package com.wasu.model.v202010;
 
-import com.wasu.http.IccResponse;
-import com.wasu.http.IccTokenResponse;
+import com.wasu.http.IotResponse;
+import com.wasu.http.IotTokenResponse;
 
 /**
  * 密码认证授权
@@ -9,14 +9,14 @@ import com.wasu.http.IccTokenResponse;
  * @author 232676
  * @since 1.0.0 2020-10-24 20:59:11
  */
-public class OauthPwdAuthResponse extends IccResponse {
-  private IccTokenResponse.IccToken data;
+public class OauthPwdAuthResponse extends IotResponse {
+  private IotTokenResponse.IccToken data;
 
-  public IccTokenResponse.IccToken getData() {
+  public IotTokenResponse.IccToken getData() {
     return data;
   }
 
-  public void setData(IccTokenResponse.IccToken data) {
+  public void setData(IotTokenResponse.IccToken data) {
     this.data = data;
   }
 

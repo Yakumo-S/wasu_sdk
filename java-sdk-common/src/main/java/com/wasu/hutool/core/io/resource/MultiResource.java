@@ -2,7 +2,6 @@ package com.wasu.hutool.core.io.resource;
 
 import com.wasu.hutool.core.collection.CollUtil;
 import com.wasu.hutool.core.io.IORuntimeException;
-
 import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.Serializable;

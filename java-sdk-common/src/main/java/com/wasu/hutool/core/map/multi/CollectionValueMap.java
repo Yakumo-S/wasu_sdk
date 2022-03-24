@@ -2,7 +2,6 @@ package com.wasu.hutool.core.map.multi;
 
 import com.wasu.hutool.core.collection.CollUtil;
 import com.wasu.hutool.core.map.MapWrapper;
-
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;

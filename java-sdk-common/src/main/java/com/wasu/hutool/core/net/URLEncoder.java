@@ -2,7 +2,6 @@ package com.wasu.hutool.core.net;
 
 import com.wasu.hutool.core.util.CharUtil;
 import com.wasu.hutool.core.util.HexUtil;
-
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.OutputStreamWriter;

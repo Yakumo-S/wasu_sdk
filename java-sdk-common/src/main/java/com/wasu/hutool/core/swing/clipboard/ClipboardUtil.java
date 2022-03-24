@@ -1,9 +1,14 @@
 package com.wasu.hutool.core.swing.clipboard;
 
 import com.wasu.hutool.core.exceptions.UtilException;
-
-import java.awt.*;
-import java.awt.datatransfer.*;
+import java.awt.Image;
+import java.awt.Toolkit;
+import java.awt.datatransfer.Clipboard;
+import java.awt.datatransfer.ClipboardOwner;
+import java.awt.datatransfer.DataFlavor;
+import java.awt.datatransfer.StringSelection;
+import java.awt.datatransfer.Transferable;
+import java.awt.datatransfer.UnsupportedFlavorException;
 import java.io.IOException;
 
 /**

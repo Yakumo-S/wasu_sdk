@@ -1,38 +1,37 @@
 package com.wasu.handle;
 
+import static java.util.concurrent.Executors.newSingleThreadScheduledExecutor;
+
+import com.wasu.constant.OauthConstant;
+import com.wasu.http.DefaultClient;
+import com.wasu.http.IClient;
+import com.wasu.http.IotHttpRequest;
+import com.wasu.http.IotTokenResponse;
+import com.wasu.http.IotTokenResponse.IccToken;
 import com.wasu.hutool.core.thread.NamedThreadFactory;
 import com.wasu.hutool.core.util.StrUtil;
 import com.wasu.hutool.http.Method;
 import com.wasu.hutool.json.JSONUtil;
 import com.wasu.hutool.log.Log;
 import com.wasu.hutool.log.LogFactory;
-import com.wasu.icc.common.ErrorConstants;
-import com.wasu.icc.exception.ClientException;
-import com.wasu.icc.exception.ServerException;
-import com.wasu.constant.OauthConstant;
-import com.wasu.http.DefaultClient;
-import com.wasu.http.IClient;
-import com.wasu.http.IccHttpHttpRequest;
-import com.wasu.http.IccTokenResponse;
-import com.wasu.http.IccTokenResponse.IccToken;
+import com.wasu.iot.common.ErrorConstants;
+import com.wasu.iot.exception.ClientException;
+import com.wasu.iot.exception.ServerException;
+import com.wasu.iot.util.BeanUtil;
+import com.wasu.iot.util.SignUtil;
 import com.wasu.model.v202010.BrmKeepAliveRequest;
 import com.wasu.model.v202010.BrmKeepAliveResponse;
 import com.wasu.model.v202010.OauthPublicKeyResponse;
 import com.wasu.model.v202010.OauthRefreshTokenRequest;
 import com.wasu.model.v202010.OauthRefreshTokenResponse;
 import com.wasu.profile.GrantType;
-import com.wasu.profile.IccProfile;
-import com.wasu.icc.util.BeanUtil;
-import com.wasu.icc.util.SignUtil;
-
+import com.wasu.profile.IotProfile;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicBoolean;
-
-import static java.util.concurrent.Executors.newSingleThreadScheduledExecutor;
 
 /**
  * 单例，获取access_token,刷新access_token，登录状态保活
@@ -51,9 +50,9 @@ public class TokenHandleSingle {
   private final ScheduledExecutorService REFRESH_TOKEN_SCHEDULED =
       newSingleThreadScheduledExecutor(new NamedThreadFactory("Icc-Refresh-Token", true));
   /** 密码和客户端认证存储Map */
-  private final Map<String, IccTokenResponse.IccToken> tokenMap = new ConcurrentHashMap<>();
+  private final Map<String, IotTokenResponse.IccToken> tokenMap = new ConcurrentHashMap<>();
 
-  public Map<String, IccTokenResponse.IccToken> getTokenMap() {
+  public Map<String, IotTokenResponse.IccToken> getTokenMap() {
     return tokenMap;
   }
   /** 定时任务刷新token */
@@ -78,9 +77,9 @@ public class TokenHandleSingle {
     return SingletonHolder.INSTANCE;
   }
 
-  public synchronized IccTokenResponse.IccToken refreshToken(GrantType grantType) {
+  public synchronized IotTokenResponse.IccToken refreshToken(GrantType grantType) {
 
-    IccTokenResponse.IccToken token = null;
+    IotTokenResponse.IccToken token = null;
     try {
       switch (grantType) {
         case password:
@@ -108,9 +107,9 @@ public class TokenHandleSingle {
    * @throws ClientException 客户端异常
    * @throws ServerException 服务端异常
    */
-  private IccTokenResponse.IccToken password() throws ClientException, ServerException {
-    IccHttpHttpRequest pubRequest =
-        new IccHttpHttpRequest(
+  private IotTokenResponse.IccToken password() throws ClientException, ServerException {
+    IotHttpRequest pubRequest =
+        new IotHttpRequest(
             OauthConstant.url(OauthConstant.OAUTH_URL_PUBLIC_KEY_GET), Method.GET);
     String pubBody = pubRequest.execute();
     OauthPublicKeyResponse keyResp = BeanUtil.toBean(pubBody, OauthPublicKeyResponse.class);
@@ -120,20 +119,20 @@ public class TokenHandleSingle {
     }
     Map<String, Object> map = new HashMap<>();
     map.put("grant_type", "password");
-    map.put("username", IccProfile.username);
-    map.put("password", SignUtil.encryptRSA(IccProfile.password, keyResp.getData().getPublicKey()));
+    map.put("username", IotProfile.username);
+    map.put("password", SignUtil.encryptRSA(IotProfile.password, keyResp.getData().getPublicKey()));
     /*web_client*/
-    map.put("client_id", IccProfile.pwdClientId);
+    map.put("client_id", IotProfile.pwdClientId);
     /*web_client*/
-    map.put("client_secret", IccProfile.pwdClientSecret);
+    map.put("client_secret", IotProfile.pwdClientSecret);
     map.put("public_key", keyResp.getData().getPublicKey());
-    IccHttpHttpRequest pr =
-        new IccHttpHttpRequest(
+    IotHttpRequest pr =
+        new IotHttpRequest(
             OauthConstant.url(OauthConstant.OAUTH_URL_PWD_AUTH_POST),
             Method.POST,
             JSONUtil.toJsonStr(map));
     String prBody = pr.execute();
-    IccTokenResponse token = BeanUtil.toBean(prBody, IccTokenResponse.class);
+    IotTokenResponse token = BeanUtil.toBean(prBody, IotTokenResponse.class);
     if (token == null || !token.isSuccess()) {
       logger.error(
           " auth failure [{}] reason [{}]",
@@ -141,12 +140,12 @@ public class TokenHandleSingle {
           token == null ? "" : token.getErrMsg());
       throw new ClientException(
           "GrantType [password] username=["
-              + IccProfile.username
+              + IotProfile.username
               + "],password=["
-              + IccProfile.password
+              + IotProfile.password
               + "] get access_token failure");
     }
-    IccTokenResponse.IccToken iccToken = token.getData();
+    IotTokenResponse.IccToken iccToken = token.getData();
     /** 设置存活时间ttl,其中 expires_in 单位是秒 */
     iccToken.setTtl(System.currentTimeMillis() + (iccToken.getExpires_in() * 1000));
 
@@ -161,17 +160,17 @@ public class TokenHandleSingle {
    * @throws ClientException 客户端异常
    * @throws ServerException 服务端异常
    */
-  private IccTokenResponse.IccToken clientCredentials() throws ClientException, ServerException {
+  private IotTokenResponse.IccToken clientCredentials() throws ClientException, ServerException {
     Map<String, Object> map = new HashMap<>();
     map.put("grant_type", "client_credentials");
-    map.put("client_id", IccProfile.clientId);
-    map.put("client_secret", IccProfile.clientSecret);
+    map.put("client_id", IotProfile.clientId);
+    map.put("client_secret", IotProfile.clientSecret);
     /** 客户端校验数据使用form表单形式 */
-    IccHttpHttpRequest cr =
-        new IccHttpHttpRequest(OauthConstant.url(OauthConstant.OAUTH_URL_CLIENT_AUTH), Method.POST);
+    IotHttpRequest cr =
+        new IotHttpRequest(OauthConstant.url(OauthConstant.OAUTH_URL_CLIENT_AUTH), Method.POST);
     cr.form(map);
     String crBody = cr.execute();
-    IccTokenResponse token = BeanUtil.toBean(crBody, IccTokenResponse.class);
+    IotTokenResponse token = BeanUtil.toBean(crBody, IotTokenResponse.class);
     if (token == null) {
       logger.error(
           "client auth failure [{}] reason [{}]",
@@ -179,7 +178,7 @@ public class TokenHandleSingle {
           token == null ? "" : token.getErrMsg());
       throw new ClientException("client auth failure" + (token == null ? "" : token.getErrMsg()));
     }
-    IccTokenResponse.IccToken iccToken = new IccToken();
+    IotTokenResponse.IccToken iccToken = new IccToken();
     iccToken.setAccess_token(token.getAccess_token());
     iccToken.setExpires_in(token.getExpires_in());
     iccToken.setScope(token.getScope());
@@ -196,7 +195,7 @@ public class TokenHandleSingle {
    * @param grantType 授权类型
    * @return IccTokenResponse.IccToken
    */
-  public IccTokenResponse.IccToken getTokenCache(String grantType) {
+  public IotTokenResponse.IccToken getTokenCache(String grantType) {
     return tokenMap.get(enGrantKeyName(grantType));
   }
 
@@ -207,21 +206,21 @@ public class TokenHandleSingle {
    * @param refreshToken 刷新fresh_token
    * @return IccTokenResponse.IccToken
    */
-  public IccTokenResponse.IccToken refreshToken(GrantType grantType, String refreshToken) {
+  public IotTokenResponse.IccToken refreshToken(GrantType grantType, String refreshToken) {
     try {
       IClient iClient = new DefaultClient();
       // 刷新token
       OauthRefreshTokenRequest refreshTokenRequest = new OauthRefreshTokenRequest();
       if (grantType.equals(GrantType.password)) {
-        refreshTokenRequest.setClient_id(IccProfile.pwdClientId);
-        refreshTokenRequest.setClient_secret(IccProfile.pwdClientSecret);
+        refreshTokenRequest.setClient_id(IotProfile.pwdClientId);
+        refreshTokenRequest.setClient_secret(IotProfile.pwdClientSecret);
         refreshTokenRequest.setGrant_type(GrantType.refresh_token.name());
         refreshTokenRequest.setRefresh_token(refreshToken);
         OauthRefreshTokenResponse refreshTokenResponse =
             iClient.doAction(refreshTokenRequest, refreshTokenRequest.getResponseClass());
         if (refreshTokenResponse.isSuccess()) {
           OauthRefreshTokenResponse.IccReFreshToken freshToken = refreshTokenResponse.getData();
-          IccTokenResponse.IccToken iccToken = new IccTokenResponse.IccToken();
+          IotTokenResponse.IccToken iccToken = new IotTokenResponse.IccToken();
           iccToken.setTtl(System.currentTimeMillis() + (freshToken.getExpires_in() * 1000));
           iccToken.setAccess_token(freshToken.getAccess_token());
           iccToken.setExpires_in(freshToken.getExpires_in());
@@ -247,8 +246,8 @@ public class TokenHandleSingle {
 
   private void refreshTokenAndKeepAlive() {
     if (TOKEN_INITED.get() && tokenMap.size() > 0) {
-      for (Map.Entry<String, IccTokenResponse.IccToken> entry : tokenMap.entrySet()) {
-        IccTokenResponse.IccToken token = entry.getValue();
+      for (Map.Entry<String, IotTokenResponse.IccToken> entry : tokenMap.entrySet()) {
+        IotTokenResponse.IccToken token = entry.getValue();
         Long currentTime = System.currentTimeMillis();
         /** 如果时间还剩120s，则刷新token */
         if (token.getTtl() - currentTime <= 120 * 1000) {
@@ -268,12 +267,12 @@ public class TokenHandleSingle {
   private void keepalive() {
     try {
       IClient iClient = new DefaultClient();
-      if (IccProfile.inited) {
-        for (Map.Entry<String, IccTokenResponse.IccToken> entry : tokenMap.entrySet()) {
+      if (IotProfile.inited) {
+        for (Map.Entry<String, IotTokenResponse.IccToken> entry : tokenMap.entrySet()) {
           if (GrantType.client_credentials == deGrantType(entry.getKey())) {
             continue;
           }
-          IccTokenResponse.IccToken token = entry.getValue();
+          IotTokenResponse.IccToken token = entry.getValue();
           BrmKeepAliveRequest request = new BrmKeepAliveRequest();
           request.setMagicId(token.getMagicId());
           // [password] 密码认证，使用web
@@ -301,7 +300,7 @@ public class TokenHandleSingle {
   }
 
   private String enGrantKeyName(String grantType) {
-    return grantType + StrUtil.COLON + IccProfile.host;
+    return grantType + StrUtil.COLON + IotProfile.host;
   }
 
   private GrantType deGrantType(String grantKeyName) {

@@ -4,7 +4,6 @@ import com.wasu.hutool.core.collection.CollUtil;
 import com.wasu.hutool.core.collection.CollectionUtil;
 import com.wasu.hutool.core.convert.Converter;
 import com.wasu.hutool.core.util.TypeUtil;
-
 import java.lang.reflect.Type;
 import java.util.Collection;
 

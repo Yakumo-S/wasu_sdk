@@ -2,7 +2,6 @@ package com.wasu.hutool.core.thread;
 
 import com.wasu.hutool.core.exceptions.NotInitedException;
 import com.wasu.hutool.core.exceptions.UtilException;
-
 import java.util.LinkedHashSet;
 import java.util.Set;
 import java.util.concurrent.CountDownLatch;

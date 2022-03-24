@@ -1,7 +1,6 @@
 package com.wasu.hutool.core.bean.copier;
 
 import com.wasu.hutool.core.convert.Convert;
-
 import java.lang.reflect.Type;
 
 /**

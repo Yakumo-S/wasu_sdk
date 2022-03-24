@@ -3,12 +3,11 @@ package com.wasu.hutool.crypto.digest.mac;
 import com.wasu.hutool.core.io.IoUtil;
 import com.wasu.hutool.crypto.CryptoException;
 import com.wasu.hutool.crypto.SecureUtil;
-
+import java.io.IOException;
+import java.io.InputStream;
 import javax.crypto.Mac;
 import javax.crypto.SecretKey;
 import javax.crypto.spec.SecretKeySpec;
-import java.io.IOException;
-import java.io.InputStream;
 
 /**
  * 默认的HMAC算法实现引擎，使用{@link Mac} 实现摘要<br>

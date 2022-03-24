@@ -10,7 +10,6 @@ import com.wasu.hutool.log.dialect.log4j.Log4jLogFactory;
 import com.wasu.hutool.log.dialect.log4j2.Log4j2LogFactory;
 import com.wasu.hutool.log.dialect.slf4j.Slf4jLogFactory;
 import com.wasu.hutool.log.dialect.tinylog.TinyLogFactory;
-
 import java.net.URL;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;

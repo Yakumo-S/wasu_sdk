@@ -5,7 +5,6 @@ import com.wasu.hutool.core.io.resource.ResourceUtil;
 import com.wasu.hutool.core.lang.Console;
 import com.wasu.hutool.log.Log;
 import com.wasu.hutool.log.LogFactory;
-
 import java.io.InputStream;
 import java.util.logging.LogManager;
 

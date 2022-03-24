@@ -1,9 +1,12 @@
 package com.wasu.hutool.http.ssl;
 
+import static com.wasu.hutool.http.ssl.SSLSocketFactoryBuilder.SSLv3;
+import static com.wasu.hutool.http.ssl.SSLSocketFactoryBuilder.TLSv1;
+import static com.wasu.hutool.http.ssl.SSLSocketFactoryBuilder.TLSv11;
+import static com.wasu.hutool.http.ssl.SSLSocketFactoryBuilder.TLSv12;
+
 import java.security.KeyManagementException;
 import java.security.NoSuchAlgorithmException;
-
-import static com.wasu.hutool.http.ssl.SSLSocketFactoryBuilder.*;
 
 /**
  * 兼容android低版本SSL连接 咱在测试HttpUrlConnection的时候 发现一部分手机无法连接[GithubPage]

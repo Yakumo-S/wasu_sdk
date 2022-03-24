@@ -1,6 +1,11 @@
 package com.wasu.hutool.log;
 
-import com.wasu.hutool.log.level.*;
+import com.wasu.hutool.log.level.DebugLog;
+import com.wasu.hutool.log.level.ErrorLog;
+import com.wasu.hutool.log.level.InfoLog;
+import com.wasu.hutool.log.level.Level;
+import com.wasu.hutool.log.level.TraceLog;
+import com.wasu.hutool.log.level.WarnLog;
 
 /**
  * 日志统一接口

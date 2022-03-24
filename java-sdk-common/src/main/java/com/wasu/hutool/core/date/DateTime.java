@@ -6,7 +6,6 @@ import com.wasu.hutool.core.date.format.FastDateFormat;
 import com.wasu.hutool.core.lang.Assert;
 import com.wasu.hutool.core.util.ObjectUtil;
 import com.wasu.hutool.core.util.StrUtil;
-
 import java.sql.Timestamp;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;

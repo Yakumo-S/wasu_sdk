@@ -8,14 +8,18 @@ import com.wasu.hutool.core.exceptions.UtilException;
 import com.wasu.hutool.core.lang.UUID;
 import com.wasu.hutool.core.lang.WeightRandom;
 import com.wasu.hutool.core.lang.WeightRandom.WeightObj;
-
-import java.awt.*;
+import java.awt.Color;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Date;
+import java.util.LinkedHashSet;
 import java.util.List;
-import java.util.*;
+import java.util.Random;
+import java.util.Set;
 import java.util.concurrent.ThreadLocalRandom;
 
 /**

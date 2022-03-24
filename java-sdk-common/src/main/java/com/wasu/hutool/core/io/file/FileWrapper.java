@@ -2,7 +2,6 @@ package com.wasu.hutool.core.io.file;
 
 import com.wasu.hutool.core.io.FileUtil;
 import com.wasu.hutool.core.util.CharsetUtil;
-
 import java.io.File;
 import java.io.Serializable;
 import java.nio.charset.Charset;

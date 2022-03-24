@@ -2,7 +2,6 @@ package com.wasu.hutool.core.lang;
 
 import com.wasu.hutool.core.date.SystemClock;
 import com.wasu.hutool.core.util.StrUtil;
-
 import java.io.Serializable;
 
 /**

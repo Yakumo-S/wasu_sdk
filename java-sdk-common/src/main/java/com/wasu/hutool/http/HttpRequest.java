@@ -5,26 +5,37 @@ import com.wasu.hutool.core.collection.CollectionUtil;
 import com.wasu.hutool.core.convert.Convert;
 import com.wasu.hutool.core.io.IORuntimeException;
 import com.wasu.hutool.core.io.IoUtil;
-import com.wasu.hutool.core.io.resource.*;
+import com.wasu.hutool.core.io.resource.BytesResource;
+import com.wasu.hutool.core.io.resource.FileResource;
+import com.wasu.hutool.core.io.resource.MultiFileResource;
+import com.wasu.hutool.core.io.resource.MultiResource;
+import com.wasu.hutool.core.io.resource.Resource;
 import com.wasu.hutool.core.lang.Assert;
 import com.wasu.hutool.core.map.MapUtil;
-import com.wasu.hutool.core.util.*;
+import com.wasu.hutool.core.util.ArrayUtil;
+import com.wasu.hutool.core.util.ObjectUtil;
+import com.wasu.hutool.core.util.RandomUtil;
+import com.wasu.hutool.core.util.StrUtil;
+import com.wasu.hutool.core.util.URLUtil;
 import com.wasu.hutool.http.cookie.GlobalCookieManager;
 import com.wasu.hutool.http.ssl.SSLSocketFactoryBuilder;
 import com.wasu.hutool.json.JSON;
-
-import javax.net.ssl.HostnameVerifier;
-import javax.net.ssl.SSLSocketFactory;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
-import java.net.*;
+import java.net.CookieManager;
+import java.net.HttpCookie;
+import java.net.HttpURLConnection;
+import java.net.Proxy;
+import java.net.URLStreamHandler;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
+import javax.net.ssl.HostnameVerifier;
+import javax.net.ssl.SSLSocketFactory;
 
 /**
  * http请求类<br>

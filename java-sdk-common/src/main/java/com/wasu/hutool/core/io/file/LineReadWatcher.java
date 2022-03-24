@@ -4,7 +4,6 @@ import com.wasu.hutool.core.io.FileUtil;
 import com.wasu.hutool.core.io.IORuntimeException;
 import com.wasu.hutool.core.io.LineHandler;
 import com.wasu.hutool.core.io.watch.SimpleWatcher;
-
 import java.io.IOException;
 import java.io.RandomAccessFile;
 import java.nio.charset.Charset;

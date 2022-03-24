@@ -1,7 +1,7 @@
 package com.wasu.http;
 
-import com.wasu.icc.exception.ClientException;
-import com.wasu.icc.exception.ServerException;
+import com.wasu.iot.exception.ClientException;
+import com.wasu.iot.exception.ServerException;
 import com.wasu.profile.GrantType;
 
 /**
@@ -21,7 +21,7 @@ public interface IClient {
    * @throws ClientException 客户端异常
    * @throws ServerException 服务异常
    */
-  String doAction(IccHttpHttpRequest request) throws ClientException, ServerException;
+  String doAction(IotHttpRequest request) throws ClientException, ServerException;
 
   /**
    * 请求结果以对象返回
@@ -35,7 +35,7 @@ public interface IClient {
    * @throws ClientException 客户端异常
    * @throws ServerException 服务异常
    */
-  <T extends IccResponse> T doAction(IccHttpHttpRequest request, Class<T> tClass)
+  <T extends IotResponse> T doAction(IotHttpRequest request, Class<T> tClass)
       throws ClientException, ServerException;
 
   /**
@@ -44,12 +44,12 @@ public interface IClient {
    * @param grantType 使用鉴权类型
    * @return IccTokenResponse.IccToken
    */
-  IccTokenResponse.IccToken getAccessToken(GrantType grantType);
+  IotTokenResponse.IccToken getAccessToken(GrantType grantType);
 
   /**
    * 使用默认类型，获取access_token
    *
    * @return IccTokenResponse.IccToken
    */
-  IccTokenResponse.IccToken getAccessToken();
+  IotTokenResponse.IccToken getAccessToken();
 }

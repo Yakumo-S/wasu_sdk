@@ -3,8 +3,11 @@ package com.wasu.hutool.core.io.resource;
 import com.wasu.hutool.core.io.IORuntimeException;
 import com.wasu.hutool.core.io.IoUtil;
 import com.wasu.hutool.core.util.CharsetUtil;
-
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.ByteArrayInputStream;
+import java.io.InputStream;
+import java.io.Serializable;
+import java.io.StringReader;
 import java.net.URL;
 import java.nio.charset.Charset;
 

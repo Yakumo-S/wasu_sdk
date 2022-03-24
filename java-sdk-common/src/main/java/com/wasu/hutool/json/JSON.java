@@ -1,7 +1,6 @@
 package com.wasu.hutool.json;
 
 import com.wasu.hutool.core.bean.BeanPath;
-
 import java.io.Serializable;
 import java.io.Writer;
 

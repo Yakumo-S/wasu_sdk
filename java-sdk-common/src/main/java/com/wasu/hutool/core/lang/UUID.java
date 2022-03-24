@@ -2,7 +2,6 @@ package com.wasu.hutool.core.lang;
 
 import com.wasu.hutool.core.util.RandomUtil;
 import com.wasu.hutool.core.util.StrUtil;
-
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;

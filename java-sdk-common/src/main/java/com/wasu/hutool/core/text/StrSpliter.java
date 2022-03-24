@@ -4,7 +4,6 @@ import com.wasu.hutool.core.lang.PatternPool;
 import com.wasu.hutool.core.util.CharUtil;
 import com.wasu.hutool.core.util.NumberUtil;
 import com.wasu.hutool.core.util.StrUtil;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Matcher;

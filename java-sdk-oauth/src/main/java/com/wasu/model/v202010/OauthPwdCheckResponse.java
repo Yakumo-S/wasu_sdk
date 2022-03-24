@@ -1,6 +1,6 @@
 package com.wasu.model.v202010;
 
-import com.wasu.http.IccResponse;
+import com.wasu.http.IotResponse;
 
 /**
  * 密码验证结果
@@ -8,4 +8,4 @@ import com.wasu.http.IccResponse;
  * @author 232676
  * @since 1.0.0 2020-10-24 20:59:11
  */
-public class OauthPwdCheckResponse extends IccResponse {}
+public class OauthPwdCheckResponse extends IotResponse {}

@@ -2,12 +2,11 @@ package com.wasu.hutool.log.dialect.slf4j;
 
 import com.wasu.hutool.log.Log;
 import com.wasu.hutool.log.LogFactory;
-import org.slf4j.LoggerFactory;
-import org.slf4j.helpers.NOPLoggerFactory;
-
 import java.io.OutputStream;
 import java.io.PrintStream;
 import java.io.UnsupportedEncodingException;
+import org.slf4j.LoggerFactory;
+import org.slf4j.helpers.NOPLoggerFactory;
 
 /**
  * <a href="http://www.slf4j.org/">SLF4J</a> log.<br>

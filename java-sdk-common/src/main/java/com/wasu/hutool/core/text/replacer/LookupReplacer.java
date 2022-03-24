@@ -1,7 +1,6 @@
 package com.wasu.hutool.core.text.replacer;
 
 import com.wasu.hutool.core.text.StrBuilder;
-
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;

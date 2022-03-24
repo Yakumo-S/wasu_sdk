@@ -3,7 +3,6 @@ package com.wasu.hutool.core.lang;
 import com.wasu.hutool.core.collection.CollectionUtil;
 import com.wasu.hutool.core.util.ArrayUtil;
 import com.wasu.hutool.core.util.StrUtil;
-
 import java.util.Collection;
 import java.util.Map;
 

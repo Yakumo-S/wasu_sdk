@@ -1,7 +1,6 @@
 package com.wasu.hutool.http.useragent;
 
 import com.wasu.hutool.core.collection.CollUtil;
-
 import java.util.ArrayList;
 import java.util.List;
 

@@ -1,6 +1,10 @@
 package com.wasu.hutool.core.date.format;
 
-import java.text.*;
+import java.text.DateFormat;
+import java.text.FieldPosition;
+import java.text.Format;
+import java.text.ParseException;
+import java.text.ParsePosition;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;

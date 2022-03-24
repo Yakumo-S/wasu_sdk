@@ -1,7 +1,6 @@
 package com.wasu.hutool.core.io.resource;
 
 import com.wasu.hutool.core.io.FileUtil;
-
 import java.io.File;
 
 /**

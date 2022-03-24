@@ -2,14 +2,13 @@ package com.wasu.hutool.crypto.digest.mac;
 
 import com.wasu.hutool.core.io.IoUtil;
 import com.wasu.hutool.crypto.CryptoException;
+import java.io.IOException;
+import java.io.InputStream;
 import org.bouncycastle.crypto.CipherParameters;
 import org.bouncycastle.crypto.Digest;
 import org.bouncycastle.crypto.Mac;
 import org.bouncycastle.crypto.macs.HMac;
 import org.bouncycastle.crypto.params.KeyParameter;
-
-import java.io.IOException;
-import java.io.InputStream;
 
 /**
  * BouncyCastle的HMAC算法实现引擎，使用{@link Mac} 实现摘要<br>

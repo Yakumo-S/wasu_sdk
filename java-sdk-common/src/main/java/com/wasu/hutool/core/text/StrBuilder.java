@@ -3,7 +3,6 @@ package com.wasu.hutool.core.text;
 import com.wasu.hutool.core.convert.Convert;
 import com.wasu.hutool.core.util.ArrayUtil;
 import com.wasu.hutool.core.util.StrUtil;
-
 import java.io.Serializable;
 import java.util.Arrays;
 

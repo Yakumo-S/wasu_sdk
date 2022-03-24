@@ -1,7 +1,6 @@
 package com.wasu.hutool.core.date.format;
 
 import com.wasu.hutool.core.lang.Assert;
-
 import java.text.DateFormat;
 import java.text.Format;
 import java.text.SimpleDateFormat;

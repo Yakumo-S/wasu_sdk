@@ -10,7 +10,7 @@
     <packaging>jar</packaging>
     <modelVersion>4.0.0</modelVersion>
     <description>
-        Dahua ICC Open API SDK for Java
+        Wasu Iot Open API SDK for Java
     </description>
     <url>https://open-icc.wasu.com</url>
     <properties>

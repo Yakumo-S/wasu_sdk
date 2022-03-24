@@ -13,5 +13,5 @@ public abstract class AbstractHttpRequest {
    * @param request IccHttpHttpRequest对象
    * @return HttpRequest hutool请求对象
    */
-  abstract HttpRequest signRequest(IccHttpHttpRequest request);
+  abstract HttpRequest signRequest(IotHttpRequest request);
 }

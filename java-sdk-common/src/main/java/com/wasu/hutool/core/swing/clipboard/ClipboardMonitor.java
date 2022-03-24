@@ -2,7 +2,6 @@ package com.wasu.hutool.core.swing.clipboard;
 
 import com.wasu.hutool.core.thread.ThreadUtil;
 import com.wasu.hutool.core.util.ObjectUtil;
-
 import java.awt.datatransfer.Clipboard;
 import java.awt.datatransfer.ClipboardOwner;
 import java.awt.datatransfer.Transferable;

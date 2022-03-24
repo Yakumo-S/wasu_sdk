@@ -1,6 +1,6 @@
 package com.wasu.model.v202010;
 
-import com.wasu.http.IccResponse;
+import com.wasu.http.IotResponse;
 
 /**
  * 鉴权公钥
@@ -8,7 +8,7 @@ import com.wasu.http.IccResponse;
  * @author 232676
  * @since 1.0.0 2020-10-24 20:59:11
  */
-public class OauthPublicKeyResponse extends IccResponse {
+public class OauthPublicKeyResponse extends IotResponse {
 
   private PublicKeyData data;
 

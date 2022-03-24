@@ -2,14 +2,13 @@ package com.wasu.hutool.http.ssl;
 
 import com.wasu.hutool.core.util.ArrayUtil;
 import com.wasu.hutool.core.util.StrUtil;
-
+import java.security.KeyManagementException;
+import java.security.NoSuchAlgorithmException;
+import java.security.SecureRandom;
 import javax.net.ssl.KeyManager;
 import javax.net.ssl.SSLContext;
 import javax.net.ssl.SSLSocketFactory;
 import javax.net.ssl.TrustManager;
-import java.security.KeyManagementException;
-import java.security.NoSuchAlgorithmException;
-import java.security.SecureRandom;
 
 /**
  * SSLSocketFactory构建器

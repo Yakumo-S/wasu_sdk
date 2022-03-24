@@ -14,5 +14,5 @@ public abstract class AbstractIClient implements IClient, Unmarshaller {
    * @param request icc请求request
    * @return 返回签名后的request
    */
-  abstract IccHttpHttpRequest signRequest(IccHttpHttpRequest request);
+  abstract IotHttpRequest signRequest(IotHttpRequest request);
 }

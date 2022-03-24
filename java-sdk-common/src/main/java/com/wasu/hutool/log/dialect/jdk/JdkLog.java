@@ -2,7 +2,6 @@ package com.wasu.hutool.log.dialect.jdk;
 
 import com.wasu.hutool.core.util.StrUtil;
 import com.wasu.hutool.log.AbstractLog;
-
 import java.util.logging.Level;
 import java.util.logging.LogRecord;
 import java.util.logging.Logger;

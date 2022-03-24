@@ -1,7 +1,6 @@
 package com.wasu.hutool.core.bean;
 
 import com.wasu.hutool.core.lang.SimpleCache;
-
 import java.beans.PropertyDescriptor;
 import java.util.Map;
 

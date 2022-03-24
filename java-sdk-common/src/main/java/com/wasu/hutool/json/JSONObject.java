@@ -8,11 +8,14 @@ import com.wasu.hutool.core.convert.Convert;
 import com.wasu.hutool.core.lang.TypeReference;
 import com.wasu.hutool.core.map.CaseInsensitiveLinkedMap;
 import com.wasu.hutool.core.map.CaseInsensitiveMap;
-import com.wasu.hutool.core.util.*;
+import com.wasu.hutool.core.util.ArrayUtil;
+import com.wasu.hutool.core.util.CharUtil;
+import com.wasu.hutool.core.util.ObjectUtil;
+import com.wasu.hutool.core.util.ReflectUtil;
+import com.wasu.hutool.core.util.StrUtil;
 import com.wasu.hutool.json.serialize.GlobalSerializeMapping;
 import com.wasu.hutool.json.serialize.JSONObjectSerializer;
 import com.wasu.hutool.json.serialize.JSONSerializer;
-
 import java.io.IOException;
 import java.io.StringWriter;
 import java.io.Writer;
@@ -20,7 +23,11 @@ import java.lang.reflect.Method;
 import java.lang.reflect.Type;
 import java.math.BigDecimal;
 import java.math.BigInteger;
-import java.util.*;
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.LinkedHashMap;
+import java.util.Map;
+import java.util.Set;
 
 /**
  * JSON对象<br>

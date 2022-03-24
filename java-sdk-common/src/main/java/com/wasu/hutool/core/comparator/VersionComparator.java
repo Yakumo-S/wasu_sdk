@@ -2,7 +2,6 @@ package com.wasu.hutool.core.comparator;
 
 import com.wasu.hutool.core.util.CharUtil;
 import com.wasu.hutool.core.util.StrUtil;
-
 import java.io.Serializable;
 import java.util.Comparator;
 import java.util.List;

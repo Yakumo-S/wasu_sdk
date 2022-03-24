@@ -1,7 +1,6 @@
 package com.wasu.hutool.core.util;
 
 import com.wasu.hutool.core.io.FileUtil;
-
 import java.io.File;
 import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;

@@ -6,14 +6,14 @@ import com.wasu.hutool.core.util.URLUtil;
 import com.wasu.hutool.http.ssl.AndroidSupportSSLFactory;
 import com.wasu.hutool.http.ssl.SSLSocketFactoryBuilder;
 import com.wasu.hutool.http.ssl.TrustAnyHostnameVerifier;
-
-import javax.net.ssl.HostnameVerifier;
-import javax.net.ssl.HttpsURLConnection;
-import javax.net.ssl.SSLSocketFactory;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
-import java.net.*;
+import java.net.HttpURLConnection;
+import java.net.ProtocolException;
+import java.net.Proxy;
+import java.net.URL;
+import java.net.URLConnection;
 import java.nio.charset.Charset;
 import java.nio.charset.UnsupportedCharsetException;
 import java.security.KeyManagementException;
@@ -21,6 +21,9 @@ import java.security.NoSuchAlgorithmException;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
+import javax.net.ssl.HostnameVerifier;
+import javax.net.ssl.HttpsURLConnection;
+import javax.net.ssl.SSLSocketFactory;
 
 /**
  * http连接对象，对HttpURLConnection的包装

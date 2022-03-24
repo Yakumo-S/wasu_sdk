@@ -9,15 +9,24 @@ import com.wasu.hutool.core.io.IoUtil;
 import com.wasu.hutool.core.io.StreamProgress;
 import com.wasu.hutool.core.map.MapUtil;
 import com.wasu.hutool.core.text.StrBuilder;
-import com.wasu.hutool.core.util.*;
-
+import com.wasu.hutool.core.util.CharsetUtil;
+import com.wasu.hutool.core.util.ObjectUtil;
+import com.wasu.hutool.core.util.ReUtil;
+import com.wasu.hutool.core.util.StrUtil;
+import com.wasu.hutool.core.util.URLUtil;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.nio.charset.Charset;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
 import java.util.Map.Entry;
 import java.util.regex.Pattern;
 

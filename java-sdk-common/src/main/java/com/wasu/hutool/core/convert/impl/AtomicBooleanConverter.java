@@ -2,7 +2,6 @@ package com.wasu.hutool.core.convert.impl;
 
 import com.wasu.hutool.core.convert.AbstractConverter;
 import com.wasu.hutool.core.util.BooleanUtil;
-
 import java.util.concurrent.atomic.AtomicBoolean;
 
 /**

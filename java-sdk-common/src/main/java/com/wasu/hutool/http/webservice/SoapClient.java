@@ -10,16 +10,23 @@ import com.wasu.hutool.core.util.XmlUtil;
 import com.wasu.hutool.http.HttpGlobalConfig;
 import com.wasu.hutool.http.HttpRequest;
 import com.wasu.hutool.http.HttpResponse;
-
-import javax.xml.XMLConstants;
-import javax.xml.namespace.QName;
-import javax.xml.soap.*;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.nio.charset.Charset;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
+import javax.xml.XMLConstants;
+import javax.xml.namespace.QName;
+import javax.xml.soap.MessageFactory;
+import javax.xml.soap.MimeHeaders;
+import javax.xml.soap.Name;
+import javax.xml.soap.SOAPBodyElement;
+import javax.xml.soap.SOAPElement;
+import javax.xml.soap.SOAPException;
+import javax.xml.soap.SOAPHeader;
+import javax.xml.soap.SOAPHeaderElement;
+import javax.xml.soap.SOAPMessage;
 
 /**
  * SOAP客户端

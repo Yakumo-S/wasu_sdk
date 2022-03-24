@@ -3,8 +3,12 @@ package com.wasu.hutool.core.collection;
 import com.wasu.hutool.core.io.IORuntimeException;
 import com.wasu.hutool.core.io.IoUtil;
 import com.wasu.hutool.core.lang.Assert;
-
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.Closeable;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.Reader;
+import java.io.Serializable;
 import java.nio.charset.Charset;
 import java.util.Iterator;
 import java.util.NoSuchElementException;

@@ -2,9 +2,13 @@ package com.wasu.hutool.core.map;
 
 import com.wasu.hutool.core.collection.CollUtil;
 import com.wasu.hutool.core.util.ArrayUtil;
-
 import java.io.Serializable;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 /**
  * 无重复键的Map

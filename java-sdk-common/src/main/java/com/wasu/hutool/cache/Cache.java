@@ -2,7 +2,6 @@ package com.wasu.hutool.cache;
 
 import com.wasu.hutool.cache.impl.CacheObj;
 import com.wasu.hutool.core.lang.func.Func0;
-
 import java.io.Serializable;
 import java.util.Iterator;
 

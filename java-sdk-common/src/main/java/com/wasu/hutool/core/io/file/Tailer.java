@@ -8,14 +8,17 @@ import com.wasu.hutool.core.io.LineHandler;
 import com.wasu.hutool.core.lang.Console;
 import com.wasu.hutool.core.util.CharUtil;
 import com.wasu.hutool.core.util.CharsetUtil;
-
 import java.io.File;
 import java.io.IOException;
 import java.io.RandomAccessFile;
 import java.io.Serializable;
 import java.nio.charset.Charset;
 import java.util.Stack;
-import java.util.concurrent.*;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.ScheduledFuture;
+import java.util.concurrent.TimeUnit;
 
 /**
  * 文件内容跟随器，实现类似Linux下"tail -f"命令功能

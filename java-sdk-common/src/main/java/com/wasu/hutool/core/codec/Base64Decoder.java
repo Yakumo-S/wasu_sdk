@@ -3,7 +3,6 @@ package com.wasu.hutool.core.codec;
 import com.wasu.hutool.core.util.ArrayUtil;
 import com.wasu.hutool.core.util.CharsetUtil;
 import com.wasu.hutool.core.util.StrUtil;
-
 import java.nio.charset.Charset;
 
 /**

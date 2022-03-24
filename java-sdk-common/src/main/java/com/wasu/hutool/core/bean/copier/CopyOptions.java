@@ -1,7 +1,6 @@
 package com.wasu.hutool.core.bean.copier;
 
 import com.wasu.hutool.core.map.MapUtil;
-
 import java.io.Serializable;
 import java.util.Map;
 

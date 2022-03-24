@@ -3,7 +3,6 @@ package com.wasu.hutool.core.io.resource;
 import com.wasu.hutool.core.io.IORuntimeException;
 import com.wasu.hutool.core.io.IoUtil;
 import com.wasu.hutool.core.util.CharsetUtil;
-
 import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.Serializable;

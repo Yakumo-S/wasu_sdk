@@ -1,7 +1,6 @@
 package com.wasu.hutool.http;
 
 import com.wasu.hutool.core.util.StrUtil;
-
 import java.nio.charset.Charset;
 
 /**

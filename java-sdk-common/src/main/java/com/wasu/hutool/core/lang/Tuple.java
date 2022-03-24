@@ -2,7 +2,6 @@ package com.wasu.hutool.core.lang;
 
 import com.wasu.hutool.core.clone.CloneSupport;
 import com.wasu.hutool.core.collection.ArrayIter;
-
 import java.io.Serializable;
 import java.util.Arrays;
 import java.util.Iterator;

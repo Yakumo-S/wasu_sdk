@@ -3,7 +3,6 @@ package com.wasu.hutool.log;
 import com.wasu.hutool.core.exceptions.ExceptionUtil;
 import com.wasu.hutool.core.util.StrUtil;
 import com.wasu.hutool.log.level.Level;
-
 import java.io.Serializable;
 
 /**

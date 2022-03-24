@@ -1,7 +1,6 @@
 package com.wasu.hutool.core.io;
 
 import com.wasu.hutool.core.util.CharsetUtil;
-
 import java.io.IOException;
 import java.io.OutputStream;
 import java.nio.charset.Charset;

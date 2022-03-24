@@ -2,7 +2,6 @@ package com.wasu.hutool.core.lang;
 
 import com.wasu.hutool.core.util.ArrayUtil;
 import com.wasu.hutool.core.util.StrUtil;
-
 import java.io.Serializable;
 import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;

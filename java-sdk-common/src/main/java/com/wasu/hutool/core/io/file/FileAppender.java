@@ -1,7 +1,6 @@
 package com.wasu.hutool.core.io.file;
 
 import com.wasu.hutool.core.util.CharsetUtil;
-
 import java.io.File;
 import java.io.PrintWriter;
 import java.io.Serializable;

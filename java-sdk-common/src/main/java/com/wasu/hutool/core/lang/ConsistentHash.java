@@ -1,7 +1,6 @@
 package com.wasu.hutool.core.lang;
 
 import com.wasu.hutool.core.util.HashUtil;
-
 import java.io.Serializable;
 import java.util.Collection;
 import java.util.SortedMap;

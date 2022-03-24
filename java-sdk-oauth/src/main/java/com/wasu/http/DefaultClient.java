@@ -1,15 +1,15 @@
 package com.wasu.http;
 
+import com.wasu.handle.TokenHandleSingle;
 import com.wasu.hutool.core.util.StrUtil;
 import com.wasu.hutool.http.HttpResponse;
 import com.wasu.hutool.json.JSONUtil;
 import com.wasu.hutool.log.Log;
 import com.wasu.hutool.log.LogFactory;
-import com.wasu.icc.exception.ClientException;
-import com.wasu.icc.exception.ServerException;
-import com.wasu.handle.TokenHandleSingle;
+import com.wasu.iot.exception.ClientException;
+import com.wasu.iot.exception.ServerException;
 import com.wasu.profile.GrantType;
-import com.wasu.profile.IccProfile;
+import com.wasu.profile.IotProfile;
 import com.wasu.unmarshaller.JsonUnmashaller;
 import com.wasu.unmarshaller.Unmarshaller;
 
@@ -24,7 +24,7 @@ public class DefaultClient extends AbstractIClient {
   private Unmarshaller unmarshaller;
 
   public DefaultClient() throws ClientException {
-    IccProfile.getInstance().init();
+    IotProfile.getInstance().init();
     tokenHandleSingle = TokenHandleSingle.getInstance();
     unmarshaller = new JsonUnmashaller();
   }
@@ -73,43 +73,43 @@ public class DefaultClient extends AbstractIClient {
       String pwdClientSecret,
       GrantType grantType) {
     // 当前已初始化，且host有变更
-    if (IccProfile.inited && !IccProfile.host.equals(host)) {
+    if (IotProfile.inited && !IotProfile.host.equals(host)) {
       // 清空刷新tokenMap
       TokenHandleSingle.getInstance().getTokenMap().clear();
     }
-    IccProfile.host = host;
-    IccProfile.grantType = grantType;
+    IotProfile.host = host;
+    IotProfile.grantType = grantType;
     switch (grantType) {
       case password:
-        IccProfile.pwdClientSecret = pwdClientSecret;
-        IccProfile.pwdClientId = pwdClientId;
+        IotProfile.pwdClientSecret = pwdClientSecret;
+        IotProfile.pwdClientId = pwdClientId;
         break;
       case client_credentials:
-        IccProfile.clientId = pwdClientId;
-        IccProfile.clientSecret = pwdClientSecret;
+        IotProfile.clientId = pwdClientId;
+        IotProfile.clientSecret = pwdClientSecret;
         break;
       default:
     }
-    IccProfile.password = password;
-    IccProfile.username = username;
-    IccProfile.inited = Boolean.FALSE;
-    IccProfile.getInstance().init();
+    IotProfile.password = password;
+    IotProfile.username = username;
+    IotProfile.inited = Boolean.FALSE;
+    IotProfile.getInstance().init();
     tokenHandleSingle = TokenHandleSingle.getInstance();
     unmarshaller = new JsonUnmashaller();
   }
 
   @Override
-  public String doAction(IccHttpHttpRequest request) throws ClientException, ServerException {
-    IccHttpHttpRequest iccHttpRequest = signRequest(request);
+  public String doAction(IotHttpRequest request) throws ClientException, ServerException {
+    IotHttpRequest iccHttpRequest = signRequest(request);
     String httpResult = iccHttpRequest.execute();
     logger.debug("response httpResult =[{}]", httpResult);
     return httpResult;
   }
 
   @Override
-  public <T extends IccResponse> T doAction(IccHttpHttpRequest request, Class<T> tClass)
+  public <T extends IotResponse> T doAction(IotHttpRequest request, Class<T> tClass)
       throws ClientException, ServerException {
-    IccHttpHttpRequest iccHttpRequest = signRequest(request);
+    IotHttpRequest iccHttpRequest = signRequest(request);
     HttpResponse httpResult = iccHttpRequest.executeResponse();
     String result = httpResult.body();
     logger.debug("response httpResult =[{}]", result);
@@ -123,9 +123,9 @@ public class DefaultClient extends AbstractIClient {
   }
 
   @Override
-  public synchronized IccTokenResponse.IccToken getAccessToken(GrantType grantType) {
+  public synchronized IotTokenResponse.IccToken getAccessToken(GrantType grantType) {
     /** false 不续缓存的生存时间 */
-    IccTokenResponse.IccToken token = tokenHandleSingle.getTokenCache(grantType.name());
+    IotTokenResponse.IccToken token = tokenHandleSingle.getTokenCache(grantType.name());
     if (token != null) {
       return token;
     }
@@ -135,25 +135,25 @@ public class DefaultClient extends AbstractIClient {
   }
 
   @Override
-  public IccTokenResponse.IccToken getAccessToken() {
-    return getAccessToken(IccProfile.grantType);
+  public IotTokenResponse.IccToken getAccessToken() {
+    return getAccessToken(IotProfile.grantType);
   }
 
   @Override
-  IccHttpHttpRequest signRequest(IccHttpHttpRequest request) {
+  IotHttpRequest signRequest(IotHttpRequest request) {
     if (request.isNeedAuth()) {
-      IccTokenResponse.IccToken token = getAccessToken(IccProfile.grantType);
+      IotTokenResponse.IccToken token = getAccessToken(IotProfile.grantType);
 
       request.header("Authorization", "bearer " + (token != null ? token.getAccess_token() : ""));
       // 密码鉴权类型设置User-Id请求头
-      if (IccProfile.grantType.equals(GrantType.password)) {
+      if (IotProfile.grantType.equals(GrantType.password)) {
         request.header(
-            "User-Id", (token != null ? token.getUserId() : IccProfile.CONFIG_CLIENT_USERID));
+            "User-Id", (token != null ? token.getUserId() : IotProfile.CONFIG_CLIENT_USERID));
       }
-      if (IccProfile.grantType.equals(GrantType.client_credentials)) {
+      if (IotProfile.grantType.equals(GrantType.client_credentials)) {
         // 默认设置请求UserId
-        if (IccProfile.CONFIG_CLIENT_USERID_ENABLE) {
-          request.header("User-Id", IccProfile.CONFIG_CLIENT_USERID);
+        if (IotProfile.CONFIG_CLIENT_USERID_ENABLE) {
+          request.header("User-Id", IotProfile.CONFIG_CLIENT_USERID);
         }
       }
     }
@@ -172,7 +172,7 @@ public class DefaultClient extends AbstractIClient {
   }
 
   @Override
-  public <T extends IccResponse> T unmarshal(Class<T> clasz, String content)
+  public <T extends IotResponse> T unmarshal(Class<T> clasz, String content)
       throws ClientException {
     return unmarshaller.unmarshal(clasz, content);
   }

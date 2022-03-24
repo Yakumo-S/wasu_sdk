@@ -1,6 +1,11 @@
 package com.wasu.hutool.cache;
 
-import com.wasu.hutool.cache.impl.*;
+import com.wasu.hutool.cache.impl.FIFOCache;
+import com.wasu.hutool.cache.impl.LFUCache;
+import com.wasu.hutool.cache.impl.LRUCache;
+import com.wasu.hutool.cache.impl.NoCache;
+import com.wasu.hutool.cache.impl.TimedCache;
+import com.wasu.hutool.cache.impl.WeakCache;
 
 /**
  * 缓存工具类

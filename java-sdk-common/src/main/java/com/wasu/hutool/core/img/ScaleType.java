@@ -1,6 +1,6 @@
 package com.wasu.hutool.core.img;
 
-import java.awt.*;
+import java.awt.Image;
 
 /**
  * 图片缩略算法类型

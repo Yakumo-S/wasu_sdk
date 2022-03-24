@@ -1,10 +1,10 @@
 package com.wasu.model.v202010;
 
+import com.wasu.http.AbstractIccRequest;
 import com.wasu.hutool.http.ContentType;
 import com.wasu.hutool.http.Method;
-import com.wasu.icc.exception.ClientException;
-import com.wasu.http.AbstractIccRequest;
-import com.wasu.profile.IccProfile;
+import com.wasu.iot.exception.ClientException;
+import com.wasu.profile.IotProfile;
 
 /**
  * 通用请求
@@ -22,7 +22,7 @@ public class GeneralRequest extends AbstractIccRequest<GeneralResponse> {
    * @throws ClientException 客户端异常
    */
   public GeneralRequest(String url, Method method, Boolean needAuth) throws ClientException {
-    super(IccProfile.URL_SCHEME + url, method, needAuth);
+    super(IotProfile.URL_SCHEME + url, method, needAuth);
   }
   /**
    * 构造器
@@ -32,7 +32,7 @@ public class GeneralRequest extends AbstractIccRequest<GeneralResponse> {
    * @throws ClientException 客户端异常
    */
   public GeneralRequest(String url, Method method) throws ClientException {
-    super(IccProfile.URL_SCHEME + url, method, Boolean.TRUE);
+    super(IotProfile.URL_SCHEME + url, method, Boolean.TRUE);
   }
 
   @Override
@@ -50,7 +50,7 @@ public class GeneralRequest extends AbstractIccRequest<GeneralResponse> {
    * @throws ClientException 客户端异常
    */
   public GeneralRequest(String url, Method method, String body) throws ClientException {
-    super(IccProfile.URL_SCHEME + url, method, Boolean.TRUE, body);
+    super(IotProfile.URL_SCHEME + url, method, Boolean.TRUE, body);
   }
 
   @Override

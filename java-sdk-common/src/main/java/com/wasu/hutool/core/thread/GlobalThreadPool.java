@@ -1,7 +1,6 @@
 package com.wasu.hutool.core.thread;
 
 import com.wasu.hutool.core.exceptions.UtilException;
-
 import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Future;

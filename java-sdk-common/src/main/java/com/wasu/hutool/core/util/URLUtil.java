@@ -7,9 +7,18 @@ import com.wasu.hutool.core.io.IoUtil;
 import com.wasu.hutool.core.io.resource.ResourceUtil;
 import com.wasu.hutool.core.lang.Assert;
 import com.wasu.hutool.core.net.URLEncoder;
-
-import java.io.*;
-import java.net.*;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.UnsupportedEncodingException;
+import java.net.JarURLConnection;
+import java.net.MalformedURLException;
+import java.net.URI;
+import java.net.URISyntaxException;
+import java.net.URL;
+import java.net.URLDecoder;
+import java.net.URLStreamHandler;
 import java.nio.charset.Charset;
 import java.util.jar.JarFile;
 

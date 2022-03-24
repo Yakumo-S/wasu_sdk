@@ -4,12 +4,15 @@ import com.wasu.hutool.core.bean.BeanUtil;
 import com.wasu.hutool.core.collection.CollectionUtil;
 import com.wasu.hutool.core.convert.Convert;
 import com.wasu.hutool.core.getter.BasicTypeGetter;
-
 import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.sql.Time;
 import java.sql.Timestamp;
-import java.util.*;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.LinkedHashMap;
+import java.util.Map;
 
 /**
  * 字典对象，扩充了HashMap中的方法

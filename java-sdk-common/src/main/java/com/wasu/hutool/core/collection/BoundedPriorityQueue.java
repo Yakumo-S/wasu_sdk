@@ -1,6 +1,11 @@
 package com.wasu.hutool.core.collection;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.Iterator;
+import java.util.PriorityQueue;
 
 /**
  * 有界优先队列<br>
