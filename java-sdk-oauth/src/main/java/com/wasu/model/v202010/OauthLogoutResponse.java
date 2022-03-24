@@ -1,0 +1,11 @@
+package com.wasu.model.v202010;
+
+import com.wasu.http.IccResponse;
+
+/**
+ * 注销授权信息,无data信息
+ *
+ * @author 232676
+ * @since 1.0.0 2020-10-24 20:59:11
+ */
+public class OauthLogoutResponse extends IccResponse {}

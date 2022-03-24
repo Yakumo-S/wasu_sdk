@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.wasu.icc</groupId>
+    <artifactId>java-sdk</artifactId>
+    <packaging>pom</packaging>
+    <version>1.0.9</version>
+    <name>icc-sdk</name>
+    <description>
+        Dahua ICC Open API SDK for Java
+    </description>
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+    <modules>
+        <module>java-sdk-all</module>
+        <module>java-sdk-common</module>
+        <module>java-sdk-core</module>
+        <module>java-sdk-oauth</module>
+        <module>java-sdk-brm</module>
+        <module>java-sdk-event</module>
+    </modules>
+    <scm>
+        <url>git@yfgitlab.dahuatech.com:Software-ESD-EBS/Evo-Api/Icc-Open-Api.git</url>
+        <connection>scm:git:git@yfgitlab.dahuatech.com:Software-ESD-EBS/Evo-Api/Icc-Open-Api.git</connection>
+        <developerConnection>scm:git:git@yfgitlab.dahuatech.com:Software-ESD-EBS/Evo-Api/Icc-Open-Api.git
+        </developerConnection>
+    </scm>
+
+
+    <!-- 定义snapshots库和releases库的nexus地址 -->
+    <distributionManagement>
+        <repository>
+            <!-- 库的id -->
+            <id>Releases</id>
+            <!-- 库的url -->
+            <url>http://rdmaven.dahuatech.com:8081/nexus/content/repositories/releases/</url>
+        </repository>
+        <snapshotRepository>
+            <id>Snapshots</id>
+            <url>http://rdmaven.dahuatech.com:8081/nexus/content/repositories/snapshots/</url>
+        </snapshotRepository>
+    </distributionManagement>
+    <developers>
+        <developer>
+            <id>dahuatech-icc-developer</id>
+            <name>232676</name>
+            <email>liu_lihai@dahuatech.com</email>
+        </developer>
+    </developers>
+
+    <build>
+        <resources>
+            <resource>
+
+                <!-- 指定资源目录 -->
+                <directory>src/main/resources</directory>
+                <excludes>
+                    <exclude>*.properties</exclude>
+                </excludes>
+                <filtering>false</filtering>
+            </resource>
+        </resources>
+        <!--<pluginManagement>&lt;!&ndash; lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) &ndash;&gt;-->
+        <plugins>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.1</version>
+                <configuration>
+                    <source>7</source>
+                    <target>7</target>
+                </configuration>
+            </plugin>
+            <!-- Javadoc -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>3.1.1</version>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <!-- maven-release-plugin插件配置 -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-release-plugin</artifactId>
+                <version>2.5.3</version>
+                <configuration>
+                    <autoVersionSubmodules>true</autoVersionSubmodules>
+                    <tagNameFormat>v@{project.version}</tagNameFormat>
+                    <generateReleasePoms>false</generateReleasePoms>
+                    <arguments>-DskipTests</arguments>
+                </configuration>
+            </plugin>
+            <plugin>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <configuration>
+                    <descriptorRefs>
+                        <descriptorRef>jar-with-dependencies</descriptorRef>
+                    </descriptorRefs>
+                    <archive>
+                        <manifest>
+                        </manifest>
+                    </archive>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>make-assembly</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>single</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+</project>
