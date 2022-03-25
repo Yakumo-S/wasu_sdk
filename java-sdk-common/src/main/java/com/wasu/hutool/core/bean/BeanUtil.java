@@ -664,9 +664,9 @@ public class BeanUtil {
 
   /**
    * 给定的Bean的类名是否匹配指定类名字符串<br>
-   * 如果isSimple为{@code false}，则只匹配类名而忽略包名，例如：com.dahuatech.hutool.TestEntity只匹配TestEntity<br>
+   * 如果isSimple为{@code false}，则只匹配类名而忽略包名，例如：com.wasu.hutool.TestEntity只匹配TestEntity<br>
    * 如果isSimple为{@code
-   * true}，则匹配包括包名的全类名，例如：com.dahuatech.hutool.TestEntity匹配com.dahuatech.hutool.TestEntity
+   * true}，则匹配包括包名的全类名，例如：com.wasu.hutool.TestEntity匹配com.wasu.hutool.TestEntity
    *
    * @param bean Bean
    * @param beanClassName Bean的类名

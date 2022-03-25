@@ -16,7 +16,7 @@ import com.wasu.iot.exception.ClientException;
  *
  * <p>User-Client-客户端标识位（非必填）
  *
- * @author 232676
+ * @author liulihai
  * @since 1.0.0 2020-10-24 20:59:11
  */
 public class OauthLogoutRequest extends AbstractIccRequest<OauthLogoutResponse> {

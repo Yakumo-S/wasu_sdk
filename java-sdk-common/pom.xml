@@ -3,7 +3,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
         <artifactId>java-sdk</artifactId>
-        <groupId>com.wasu.icc</groupId>
+        <groupId>com.wasu.iot</groupId>
         <version>1.0.9</version>
     </parent>
     <artifactId>java-sdk-common</artifactId>
@@ -12,7 +12,7 @@
     <description>
         Wasu Iot Open API SDK for Java
     </description>
-    <url>https://open-icc.wasu.com</url>
+    <url>https://console.iotwasu.cn</url>
     <properties>
         <!-- versions -->
         <slf4j.version>1.7.26</slf4j.version>

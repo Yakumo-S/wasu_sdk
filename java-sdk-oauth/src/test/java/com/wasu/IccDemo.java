@@ -7,7 +7,7 @@ import com.wasu.iot.exception.ClientException;
 import com.wasu.profile.GrantType;
 
 /**
- * @author 232676
+ * @author liulihai
  * @since 2020/10/27 19:50
  */
 public class IccDemo {
@@ -23,7 +23,7 @@ public class IccDemo {
           new DefaultClient("127.0.0.1", "username", "password", "pwdClientId", "pwdClientSecret");
       IotTokenResponse.IccToken pwdToken = pwdiClient.getAccessToken(GrantType.password);
 
-      // 3、在classpath创建config/iccSdk.properties配置文件
+      // 3、在classpath创建config/iotSdk.properties配置文件
       // #服务地址
       // iot.sdk.host=10.35.121.62
       // #客户端ID

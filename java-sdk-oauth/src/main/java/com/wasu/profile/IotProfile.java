@@ -19,7 +19,7 @@ import java.util.Properties;
 import java.util.concurrent.ConcurrentHashMap;
 
 /**
- * @author 232676
+ * @author liulihai
  * @since 1.0.0 2020-10-24 20:59:11
  */
 public class IotProfile {
@@ -50,7 +50,7 @@ public class IotProfile {
   /** 是否开启客户端模式，自动携带请求头User-Id=1 */
   public static boolean CONFIG_CLIENT_USERID_ENABLE = Boolean.TRUE;
   private static String HTTPS_PROTOCOL = "http://";
-  /** 默认HTTPS,例如https://api.dahuatech.com,尾部不包含"/" */
+  /** 默认HTTPS,例如https://api.wasu.com,尾部不包含"/" */
   public static String URL_SCHEME = HTTPS_PROTOCOL;
   private static String HTTP_PROTOCOL = "http://";
   /** 配置config */
@@ -88,7 +88,7 @@ public class IotProfile {
         CONFIG_CLIENT_USERID_ENABLE = Boolean.parseBoolean(configClientValue);
       }
     }
-    String configClientUserId = "icc.sdk.config.client.userId";
+    String configClientUserId = "wasu.iot.sdk.config.client.userId";
     if (this.configuration.containsKey(configClientUserId)) {
       CONFIG_CLIENT_USERID = this.configuration.getProperty(configClientUserId);
     } else {
@@ -107,51 +107,51 @@ public class IotProfile {
     if (StrUtil.isNotBlank(configHttps) && "false".equalsIgnoreCase(configHttps)) {
       HTTPS_PROTOCOL = HTTP_PROTOCOL;
     }
-    String sdkHost = "icc.sdk.host";
+    String sdkHost = "wasu.iot.sdk.host";
     if (StrUtil.isBlank(host) && this.configuration.containsKey(sdkHost)) {
       host = this.configuration.getProperty(sdkHost);
     } else if (StrUtil.isBlank(host)) {
       host = System.getProperty(sdkHost);
     }
     URL_SCHEME = HTTPS_PROTOCOL + host;
-    String sdkClientId = "icc.sdk.clientId";
+    String sdkClientId = "wasu.iot.sdk.clientId";
     if (StrUtil.isBlank(clientId) && this.configuration.containsKey(sdkClientId)) {
       clientId = this.configuration.getProperty(sdkClientId);
     } else if (StrUtil.isBlank(clientId)) {
       clientId = System.getProperty(sdkClientId);
     }
-    String sdkClientSecret = "icc.sdk.clientSecret";
+    String sdkClientSecret = "wasu.iot.sdk.clientSecret";
     if (StrUtil.isBlank(clientSecret) && this.configuration.containsKey(sdkClientSecret)) {
       clientSecret = StrUtil.trim(this.configuration.getProperty(sdkClientSecret));
     } else if (StrUtil.isBlank(clientSecret)) {
       clientSecret = System.getProperty(sdkClientSecret);
     }
-    String sdkPwdClientId = "icc.sdk.pwdClientId";
+    String sdkPwdClientId = "wasu.iot.sdk.pwdClientId";
     if (StrUtil.isBlank(pwdClientId) && this.configuration.containsKey(sdkPwdClientId)) {
       pwdClientId = this.configuration.getProperty(sdkPwdClientId);
     } else if (StrUtil.isBlank(pwdClientId)) {
       pwdClientId = System.getProperty(sdkPwdClientId);
     }
-    String sdkPwdClientSecretKey = "icc.sdk.pwdClientSecret";
+    String sdkPwdClientSecretKey = "wasu.iot.sdk.pwdClientSecret";
     if (StrUtil.isBlank(pwdClientSecret) && this.configuration.containsKey(sdkPwdClientSecretKey)) {
       pwdClientSecret = this.configuration.getProperty(sdkPwdClientSecretKey);
     } else if (StrUtil.isBlank(pwdClientSecret)) {
       pwdClientSecret = System.getProperty(sdkPwdClientSecretKey);
     }
 
-    String sdkUsername = "icc.sdk.username";
+    String sdkUsername = "wasu.iot.sdk.username";
     if (StrUtil.isBlank(username) && this.configuration.containsKey(sdkUsername)) {
       username = this.configuration.getProperty(sdkUsername);
     } else if (StrUtil.isBlank(username)) {
       username = System.getProperty(sdkUsername);
     }
-    String sdkPassword = "icc.sdk.password";
+    String sdkPassword = "wasu.iot.sdk.password";
     if (StrUtil.isBlank(password) && this.configuration.containsKey(sdkPassword)) {
       password = this.configuration.getProperty(sdkPassword);
     } else if (StrUtil.isBlank(password)) {
       password = System.getProperty(sdkPassword);
     }
-    String sdkGrantType = "icc.sdk.grantType";
+    String sdkGrantType = "wasu.iot.sdk.grantType";
     if (grantType == null && this.configuration.containsKey(sdkGrantType)) {
       sdkGrantType = this.configuration.getProperty(sdkGrantType);
       grantType = GrantType.valueOf(sdkGrantType);
@@ -181,7 +181,7 @@ public class IotProfile {
 
   private void loadIccSdkProperties() {
     // 根路径为classpath
-    InputStream is = this.getClass().getResourceAsStream("/config/iccSdk.properties");
+    InputStream is = this.getClass().getResourceAsStream("/config/iotSdk.properties");
     if (is != null) {
       try {
         this.configuration.clear();
@@ -194,7 +194,7 @@ public class IotProfile {
         }
       }
     }else{
-      logger.info("can not load [classpath:resources/config/iccSdk.properties] , use DefaultClient constructor instead ");
+      logger.info("can not load [classpath:resources/config/iotSdk.properties] , use DefaultClient constructor instead ");
     }
   }
 

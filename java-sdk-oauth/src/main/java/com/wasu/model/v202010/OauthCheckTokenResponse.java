@@ -4,7 +4,7 @@ import com.wasu.http.IotResponse;
 import java.util.List;
 
 /**
- * @author 232676
+ * @author liulihai
  * @since 1.0.0 2020-10-24 20:59:11
  */
 public class OauthCheckTokenResponse extends IotResponse {

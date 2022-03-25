@@ -4,7 +4,7 @@ package com.wasu.iot.util;
  * 字符工具类<br>
  * 部分工具来自于Apache Commons系列
  *
- * @author 232676
+ * @author liulihai
  * @since 1.0.0 2020-10-24 20:59:11
  */
 public class CharUtil {

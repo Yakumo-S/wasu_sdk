@@ -14,7 +14,7 @@ import com.wasu.unmarshaller.JsonUnmashaller;
 import com.wasu.unmarshaller.Unmarshaller;
 
 /**
- * @author 232676
+ * @author liulihai
  * @since 1.0.0 2020-10-24 20:59:11
  */
 public class DefaultClient extends AbstractIClient {
@@ -100,8 +100,8 @@ public class DefaultClient extends AbstractIClient {
 
   @Override
   public String doAction(IotHttpRequest request) throws ClientException, ServerException {
-    IotHttpRequest iccHttpRequest = signRequest(request);
-    String httpResult = iccHttpRequest.execute();
+    IotHttpRequest iotHttpRequest = signRequest(request);
+    String httpResult = iotHttpRequest.execute();
     logger.debug("response httpResult =[{}]", httpResult);
     return httpResult;
   }
@@ -109,8 +109,8 @@ public class DefaultClient extends AbstractIClient {
   @Override
   public <T extends IotResponse> T doAction(IotHttpRequest request, Class<T> tClass)
       throws ClientException, ServerException {
-    IotHttpRequest iccHttpRequest = signRequest(request);
-    HttpResponse httpResult = iccHttpRequest.executeResponse();
+    IotHttpRequest iotHttpRequest = signRequest(request);
+    HttpResponse httpResult = iotHttpRequest.executeResponse();
     String result = httpResult.body();
     logger.debug("response httpResult =[{}]", result);
     T t = unmarshal(tClass, result);

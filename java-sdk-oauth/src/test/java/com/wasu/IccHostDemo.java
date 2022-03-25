@@ -6,7 +6,7 @@ import com.wasu.http.IotTokenResponse;
 import com.wasu.iot.exception.ClientException;
 
 /**
- * @author 232676
+ * @author liulihai
  * @since 2020/10/27 19:50
  */
 public class IccHostDemo {
@@ -17,7 +17,7 @@ public class IccHostDemo {
       IClient client = new DefaultClient();
       IotTokenResponse.IccToken clientToken = client.getAccessToken();
       System.out.println(clientToken);
-      // 3、在classpath创建config/iccSdk.properties配置文件
+      // 3、在classpath创建config/iotSdk.properties配置文件
       // #服务地址
       // iot.sdk.host=10.35.121.62
       // #客户端ID

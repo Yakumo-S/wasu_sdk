@@ -3,11 +3,11 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.wasu.icc</groupId>
+    <groupId>com.wasu.iot</groupId>
     <artifactId>java-sdk</artifactId>
     <packaging>pom</packaging>
     <version>1.0.9</version>
-    <name>icc-sdk</name>
+    <name>iot-sdk</name>
     <description>
         Wasu Iot Open API SDK for Java
     </description>
@@ -21,9 +21,9 @@
         <module>java-sdk-oauth</module>
     </modules>
     <scm>
-        <url>git@yfgitlab.dahuatech.com:Software-ESD-EBS/Evo-Api/Icc-Open-Api.git</url>
-        <connection>scm:git:git@yfgitlab.dahuatech.com:Software-ESD-EBS/Evo-Api/Icc-Open-Api.git</connection>
-        <developerConnection>scm:git:git@yfgitlab.dahuatech.com:Software-ESD-EBS/Evo-Api/Icc-Open-Api.git
+        <url>git@yfgitlab.wasu.com:Software-ESD-EBS/Evo-Api/Icc-Open-Api.git</url>
+        <connection>scm:git:git@yfgitlab.wasu.com:Software-ESD-EBS/Evo-Api/Icc-Open-Api.git</connection>
+        <developerConnection>scm:git:git@yfgitlab.wasu.com:Software-ESD-EBS/Evo-Api/Icc-Open-Api.git
         </developerConnection>
     </scm>
 
@@ -34,18 +34,18 @@
             <!-- 库的id -->
             <id>Releases</id>
             <!-- 库的url -->
-            <url>http://rdmaven.dahuatech.com:8081/nexus/content/repositories/releases/</url>
+            <url>http://rdmaven.wasu.com:8081/nexus/content/repositories/releases/</url>
         </repository>
         <snapshotRepository>
             <id>Snapshots</id>
-            <url>http://rdmaven.dahuatech.com:8081/nexus/content/repositories/snapshots/</url>
+            <url>http://rdmaven.wasu.com:8081/nexus/content/repositories/snapshots/</url>
         </snapshotRepository>
     </distributionManagement>
     <developers>
         <developer>
-            <id>dahuatech-icc-developer</id>
-            <name>232676</name>
-            <email>liu_lihai@dahuatech.com</email>
+            <id>wasu-iot-developer</id>
+            <name>liulihai</name>
+            <email>liulihai@outlook.com</email>
         </developer>
     </developers>
 

@@ -9,7 +9,7 @@ import com.wasu.profile.IotProfile;
 /**
  * 通用请求
  *
- * @author 232676
+ * @author liulihai
  * @since 1.0.0 2020/11/18 9:58
  */
 public class GeneralRequest extends AbstractIccRequest<GeneralResponse> {

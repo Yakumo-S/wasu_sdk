@@ -8,7 +8,7 @@ import com.wasu.iot.exception.ClientException;
 /**
  * 密码验证，需鉴权
  *
- * @author 232676
+ * @author liulihai
  * @since 1.0.0 2020-10-24 20:59:11
  */
 public class OauthPwdCheckRequest extends AbstractIccRequest<OauthPwdCheckResponse> {

@@ -36,7 +36,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
 /**
  * 单例，获取access_token,刷新access_token，登录状态保活
  *
- * @author 232676
+ * @author liulihai
  * @since 1.0.0 2020-10-24 20:59:11
  */
 public class TokenHandleSingle {
@@ -145,12 +145,12 @@ public class TokenHandleSingle {
               + IotProfile.password
               + "] get access_token failure");
     }
-    IotTokenResponse.IccToken iccToken = token.getData();
+    IotTokenResponse.IccToken iotToken = token.getData();
     /** 设置存活时间ttl,其中 expires_in 单位是秒 */
-    iccToken.setTtl(System.currentTimeMillis() + (iccToken.getExpires_in() * 1000));
+    iotToken.setTtl(System.currentTimeMillis() + (iotToken.getExpires_in() * 1000));
 
-    tokenMap.put(enGrantKeyName(GrantType.password.name()), iccToken);
-    return iccToken;
+    tokenMap.put(enGrantKeyName(GrantType.password.name()), iotToken);
+    return iotToken;
   }
 
   /**
@@ -178,15 +178,15 @@ public class TokenHandleSingle {
           token == null ? "" : token.getErrMsg());
       throw new ClientException("client auth failure" + (token == null ? "" : token.getErrMsg()));
     }
-    IotTokenResponse.IccToken iccToken = new IccToken();
-    iccToken.setAccess_token(token.getAccess_token());
-    iccToken.setExpires_in(token.getExpires_in());
-    iccToken.setScope(token.getScope());
-    iccToken.setToken_type(token.getToken_type());
+    IotTokenResponse.IccToken iotToken = new IccToken();
+    iotToken.setAccess_token(token.getAccess_token());
+    iotToken.setExpires_in(token.getExpires_in());
+    iotToken.setScope(token.getScope());
+    iotToken.setToken_type(token.getToken_type());
     /** expires_in 单位是秒 */
-    iccToken.setTtl(System.currentTimeMillis() + (iccToken.getExpires_in() * 1000));
-    tokenMap.put(enGrantKeyName(GrantType.client_credentials.name()), iccToken);
-    return iccToken;
+    iotToken.setTtl(System.currentTimeMillis() + (iotToken.getExpires_in() * 1000));
+    tokenMap.put(enGrantKeyName(GrantType.client_credentials.name()), iotToken);
+    return iotToken;
   }
 
   /**
@@ -220,16 +220,16 @@ public class TokenHandleSingle {
             iClient.doAction(refreshTokenRequest, refreshTokenRequest.getResponseClass());
         if (refreshTokenResponse.isSuccess()) {
           OauthRefreshTokenResponse.IccReFreshToken freshToken = refreshTokenResponse.getData();
-          IotTokenResponse.IccToken iccToken = new IotTokenResponse.IccToken();
-          iccToken.setTtl(System.currentTimeMillis() + (freshToken.getExpires_in() * 1000));
-          iccToken.setAccess_token(freshToken.getAccess_token());
-          iccToken.setExpires_in(freshToken.getExpires_in());
-          iccToken.setMagicId(freshToken.getMagicId());
-          iccToken.setUserId(freshToken.getUserId());
-          iccToken.setToken_type(freshToken.getToken_type());
-          iccToken.setRefresh_token(freshToken.getRefresh_token());
-          iccToken.setScope(freshToken.getScope());
-          return iccToken;
+          IotTokenResponse.IccToken iotToken = new IotTokenResponse.IccToken();
+          iotToken.setTtl(System.currentTimeMillis() + (freshToken.getExpires_in() * 1000));
+          iotToken.setAccess_token(freshToken.getAccess_token());
+          iotToken.setExpires_in(freshToken.getExpires_in());
+          iotToken.setMagicId(freshToken.getMagicId());
+          iotToken.setUserId(freshToken.getUserId());
+          iotToken.setToken_type(freshToken.getToken_type());
+          iotToken.setRefresh_token(freshToken.getRefresh_token());
+          iotToken.setScope(freshToken.getScope());
+          return iotToken;
         }
       }
       /*客户端没有fresh_token 字段，无法调用刷新token接口，故只能重新获取*/

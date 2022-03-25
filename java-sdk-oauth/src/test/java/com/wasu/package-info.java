@@ -5,7 +5,7 @@
  *
  * <p>npm install macaca-reporter -g
  *
- * @author 232676
+ * @author liulihai
  * @since 1.0.0 2021/1/11 19:15
  */
 package com.wasu;

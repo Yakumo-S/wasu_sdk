@@ -7,7 +7,7 @@ import com.wasu.profile.GrantType;
 /**
  * 默认请求类
  *
- * @author 232676
+ * @author liulihai
  * @since 1.0.0 2020-10-24 20:59:11
  */
 public interface IClient {
@@ -16,7 +16,7 @@ public interface IClient {
    *
    * <p>实现类已设置鉴权，无需再次设置accessToken
    *
-   * @param request icc请求
+   * @param request iot请求
    * @return String 结果
    * @throws ClientException 客户端异常
    * @throws ServerException 服务异常
@@ -28,10 +28,10 @@ public interface IClient {
    *
    * <p>实现类已设置鉴权，无需再次设置accessToken
    *
-   * @param request icc请求
+   * @param request iot请求
    * @param tClass response 对象
    * @param <T> 泛型 对象
-   * @return 返回iccResponse
+   * @return 返回iotResponse
    * @throws ClientException 客户端异常
    * @throws ServerException 服务异常
    */

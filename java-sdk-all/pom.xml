@@ -3,7 +3,7 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <parent>
     <artifactId>java-sdk</artifactId>
-    <groupId>com.wasu.icc</groupId>
+    <groupId>com.wasu.iot</groupId>
     <version>1.0.9</version>
   </parent>
   <packaging>jar</packaging>
@@ -42,7 +42,7 @@
   <dependencies>
     <dependency>
       <artifactId>java-sdk-oauth</artifactId>
-      <groupId>com.wasu.icc</groupId>
+      <groupId>com.wasu.iot</groupId>
       <version>${version}</version>
     </dependency>
     <dependency>
