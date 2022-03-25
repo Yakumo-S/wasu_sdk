@@ -141,9 +141,9 @@ public class TinyLog extends AbstractLog {
   }
 
   /**
-   * 将ICC的Level等级转换为Tinylog的Level等级
+   * 将wasuIot的Level等级转换为Tinylog的Level等级
    *
-   * @param level ICC的Level等级
+   * @param level wasuIot的Level等级
    * @return Tinylog的Level
    * @since 4.0.3
    */

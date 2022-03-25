@@ -46,7 +46,7 @@ import javax.net.ssl.SSLSocketFactory;
 public class HttpRequest extends HttpBase<HttpRequest> {
 
   private static final String BOUNDARY =
-      "--------------------ICC_" + RandomUtil.randomString(16);
+      "--------------------wasuIot_" + RandomUtil.randomString(16);
   private static final byte[] BOUNDARY_END = StrUtil.format("--{}--\r\n", BOUNDARY).getBytes();
   private static final String CONTENT_DISPOSITION_TEMPLATE =
       "Content-Disposition: form-data; name=\"{}\"\r\n\r\n";
@@ -373,7 +373,7 @@ public class HttpRequest extends HttpBase<HttpRequest> {
 
   /**
    * 设置Cookie<br>
-   * 自定义Cookie后会覆盖ICC的默认Cookie行为
+   * 自定义Cookie后会覆盖wasuIot的默认Cookie行为
    *
    * @param cookies Cookie值数组，如果为{@code null}则设置无效，使用默认Cookie行为
    * @return this
@@ -388,7 +388,7 @@ public class HttpRequest extends HttpBase<HttpRequest> {
 
   /**
    * 设置Cookie<br>
-   * 自定义Cookie后会覆盖ICC的默认Cookie行为
+   * 自定义Cookie后会覆盖wasuIot的默认Cookie行为
    *
    * @param cookie Cookie值，如果为{@code null}则设置无效，使用默认Cookie行为
    * @return this
@@ -614,7 +614,7 @@ public class HttpRequest extends HttpBase<HttpRequest> {
    *
    * <pre>
    * 1. 标准参数，例如 a=1&amp;b=2 这种格式
-   * 2. Rest模式，此时body需要传入一个JSON或者XML字符串，ICC会自动绑定其对应的Content-Type
+   * 2. Rest模式，此时body需要传入一个JSON或者XML字符串，wasuIot会自动绑定其对应的Content-Type
    * </pre>
    *
    * @param body 请求体
@@ -630,7 +630,7 @@ public class HttpRequest extends HttpBase<HttpRequest> {
    *
    * <pre>
    * 1. 标准参数，例如 a=1&amp;b=2 这种格式
-   * 2. Rest模式，此时body需要传入一个JSON或者XML字符串，ICC会自动绑定其对应的Content-Type
+   * 2. Rest模式，此时body需要传入一个JSON或者XML字符串，wasuIot会自动绑定其对应的Content-Type
    * </pre>
    *
    * @param body 请求体

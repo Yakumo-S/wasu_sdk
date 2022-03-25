@@ -41,7 +41,7 @@
 
   <dependencies>
     <dependency>
-      <artifactId>java-sdk-oauth</artifactId>
+      <artifactId>java-sdk-iot</artifactId>
       <groupId>com.wasu.iot</groupId>
       <version>${version}</version>
     </dependency>

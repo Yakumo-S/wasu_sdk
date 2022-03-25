@@ -11,7 +11,7 @@ import com.wasu.hutool.log.LogFactory;
 public class ConsoleLogFactory extends LogFactory {
 
   public ConsoleLogFactory() {
-    super("ICC Console Logging");
+    super("wasuIot Console Logging");
   }
 
   @Override

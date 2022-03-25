@@ -175,7 +175,7 @@ public class HttpUtil {
    *
    * <pre>
    * 1. 标准参数，例如 a=1&amp;b=2 这种格式
-   * 2. Rest模式，此时body需要传入一个JSON或者XML字符串，ICC会自动绑定其对应的Content-Type
+   * 2. Rest模式，此时body需要传入一个JSON或者XML字符串，wasuIot会自动绑定其对应的Content-Type
    * </pre>
    *
    * @param urlString 网址
@@ -192,7 +192,7 @@ public class HttpUtil {
    *
    * <pre>
    * 1. 标准参数，例如 a=1&amp;b=2 这种格式
-   * 2. Rest模式，此时body需要传入一个JSON或者XML字符串，ICC会自动绑定其对应的Content-Type
+   * 2. Rest模式，此时body需要传入一个JSON或者XML字符串，wasuIot会自动绑定其对应的Content-Type
    * </pre>
    *
    * @param urlString 网址

@@ -13,7 +13,7 @@
   </description>
   <url>https://console.iotwasu.cn</url>
 
-  <artifactId>java-sdk-oauth</artifactId>
+  <artifactId>java-sdk-iot</artifactId>
 
   <dependencies>
     <dependency>

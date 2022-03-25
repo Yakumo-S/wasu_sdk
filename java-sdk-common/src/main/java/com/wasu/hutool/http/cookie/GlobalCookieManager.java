@@ -13,7 +13,7 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * 全局Cookie管理器，只针对ICC请求有效
+ * 全局Cookie管理器，只针对wasuIot请求有效
  *
  * @author Looly
  * @since 4.5.15

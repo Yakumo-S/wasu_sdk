@@ -1,5 +1,5 @@
 /**
- * ICC核心方法及数据结构包
+ * wasuIot核心方法及数据结构包
  *
  * @author looly
  */

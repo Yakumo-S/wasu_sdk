@@ -60,7 +60,7 @@ public class NamedThreadFactory implements ThreadFactory {
    */
   public NamedThreadFactory(
       String prefix, ThreadGroup threadGroup, boolean isDaemon, UncaughtExceptionHandler handler) {
-    this.prefix = StrUtil.isBlank(prefix) ? "ICC" : prefix;
+    this.prefix = StrUtil.isBlank(prefix) ? "wasuIot" : prefix;
     if (null == threadGroup) {
       threadGroup = ThreadUtil.currentThreadGroup();
     }
