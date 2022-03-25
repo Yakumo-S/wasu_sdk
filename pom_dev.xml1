@@ -6,7 +6,7 @@
     <groupId>com.wasu.iot</groupId>
     <artifactId>java-sdk</artifactId>
     <packaging>pom</packaging>
-    <version>1.0.9</version>
+    <version>1.0.0</version>
     <name>iot-sdk</name>
     <description>
         Wasu Iot Open API SDK for Java

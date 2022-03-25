@@ -6,7 +6,7 @@
     <groupId>com.wasu.iot</groupId>
     <artifactId>java-sdk</artifactId>
     <packaging>pom</packaging>
-    <version>1.0.9</version>
+    <version>1.0.0</version>
     <name>iot-sdk</name>
     <description>
         Wasu Iot Open API SDK for Java
@@ -18,7 +18,7 @@
         <module>java-sdk-all</module>
         <module>java-sdk-common</module>
         <module>java-sdk-core</module>
-        <module>java-sdk-oauth</module>
+        <module>java-sdk-iot</module>
     </modules>
     <scm>
         <url>git@yfgitlab.wasu.com:Software-ESD-EBS/Evo-Api/Icc-Open-Api.git</url>
