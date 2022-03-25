@@ -29,7 +29,7 @@ public class IotClientImpl implements IotClient {
   }
 
   @Override
-  public String create(CreateDeviceRequest createDeviceRequest) {
+  public String register(CreateDeviceRequest createDeviceRequest) {
     String re = null;
     try {
       if (StrUtil.isBlank(createDeviceRequest.getDeviceId())) {

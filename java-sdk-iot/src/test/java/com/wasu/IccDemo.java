@@ -29,7 +29,7 @@ public class IccDemo {
       request.setDeviceName("滨江大厦4-2楼");
       request.setLatitude("30.207561");
       request.setLongitude("120.23475");
-      String reso = iotClient.create(request);
+      String reso = iotClient.register(request);
       System.out.println(reso);
       // 3、在classpath创建config/iotSdk.properties配置文件
       // #服务地址

@@ -12,26 +12,30 @@ import java.util.Map;
 public interface IotClient {
 
   /**
-   * 创建设备，必填字段 deviceId,deviceName,longitude,latitude
+   * 设备注册（添加）
+   * <p>
+   * 必填字段 deviceId,deviceName,longitude,latitude
    *
    * @param createDeviceRequest
    * @return
    */
-  String create(CreateDeviceRequest createDeviceRequest);
+  String register(CreateDeviceRequest createDeviceRequest);
 
   /**
    * 上线
    *
-   * @param deviceId 设备序号
+   * @param productKey 产品productKey
+   * @param deviceId   设备序号
    * @return
    */
   GeneralResponse online(String productKey, String deviceId);
 
   /**
-   * 上报属性
+   * 上报属性 字段基于物模型
    *
-   * @param deviceId
-   * @param properties
+   * @param productKey 产品productKey
+   * @param deviceId   设备序号
+   * @param properties 属性值 K-V（参考物模型）
    * @return
    */
   GeneralResponse reportProperties(String productKey, String deviceId, Map<String, Object> properties);
@@ -39,8 +43,10 @@ public interface IotClient {
   /**
    * 上报事件
    *
-   * @param event
-   * @param data
+   * @param productKey 产品productKey
+   * @param deviceId   设备序号
+   * @param event      事件标识（参考物模型）
+   * @param data       产生事件的属性值 K-V
    * @return
    */
   GeneralResponse reportEvent(String productKey, String deviceId, String event, Map<String, Object> data);
@@ -51,6 +57,7 @@ public interface IotClient {
    * @param deviceId
    * @return
    */
+  @Deprecated
   GeneralResponse offline(String productKey, String deviceId);
 
 
