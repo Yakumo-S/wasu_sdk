@@ -13,10 +13,10 @@ import com.wasu.model.v202203.CreateDeviceRequest;
 import java.util.HashMap;
 import java.util.Map;
 
+
 /**
  * @author liulihai
- * @version 1.0
- * @date 2022/3/25
+ * @since 2022/3/25
  */
 public class IotClientImpl implements IotClient {
 

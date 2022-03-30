@@ -6,8 +6,7 @@ import java.util.Map;
 
 /**
  * @author liulihai
- * @version 1.0
- * @date 2022/3/25
+ * @since 2020/10/27 19:50
  */
 public interface IotClient {
 
@@ -16,8 +15,8 @@ public interface IotClient {
    * <p>
    * 必填字段 deviceId,deviceName,longitude,latitude
    *
-   * @param createDeviceRequest
-   * @return
+   * @param createDeviceRequest 请求
+   * @return 字符串
    */
   String register(CreateDeviceRequest createDeviceRequest);
 
@@ -26,7 +25,7 @@ public interface IotClient {
    *
    * @param productKey 产品productKey
    * @param deviceId   设备序号
-   * @return
+   * @return 返回
    */
   GeneralResponse online(String productKey, String deviceId);
 
@@ -36,7 +35,7 @@ public interface IotClient {
    * @param productKey 产品productKey
    * @param deviceId   设备序号
    * @param properties 属性值 K-V（参考物模型）
-   * @return
+   * @return 返回
    */
   GeneralResponse reportProperties(String productKey, String deviceId, Map<String, Object> properties);
 
@@ -47,15 +46,16 @@ public interface IotClient {
    * @param deviceId   设备序号
    * @param event      事件标识（参考物模型）
    * @param data       产生事件的属性值 K-V
-   * @return
+   * @return 返回
    */
   GeneralResponse reportEvent(String productKey, String deviceId, String event, Map<String, Object> data);
 
   /**
    * 离线
    *
-   * @param deviceId
-   * @return
+   * @param productKey 产品productKey
+   * @param deviceId   设备序号
+   * @return 返回
    */
   @Deprecated
   GeneralResponse offline(String productKey, String deviceId);

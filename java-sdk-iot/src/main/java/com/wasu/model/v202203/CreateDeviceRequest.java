@@ -10,8 +10,7 @@ import java.util.Map;
 
 /**
  * @author liulihai
- * @version 1.0
- * @date 2022/3/25
+ * @since 2022/3/25
  */
 public class CreateDeviceRequest extends AbstractIccRequest<GeneralResponse> {
 
