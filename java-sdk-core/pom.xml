@@ -11,7 +11,7 @@
     <description>
         Wasu Iot Open API SDK for Java
     </description>
-    <url>https://console.iotwasu.cn</url>
+    <url>https://www.iotwasu.cn</url>
     <artifactId>java-sdk-core</artifactId>
 
     <dependencies>
