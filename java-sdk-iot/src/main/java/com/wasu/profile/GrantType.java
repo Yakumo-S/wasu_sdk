@@ -4,7 +4,7 @@ package com.wasu.profile;
  * 授权类型
  *
  * @author liulihai
- * @since 1.0.0 2020-10-24 20:59:11
+ * @since 2020-10-24 20:59:11
  */
 public enum GrantType {
   /** 密码认证鉴权 */

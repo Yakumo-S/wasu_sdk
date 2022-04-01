@@ -6,7 +6,7 @@ import com.wasu.http.IotResponse;
  * 客户端认证授权
  *
  * @author liulihai
- * @since 1.0.0 2020-10-24 20:59:11
+ * @since 2020-10-24 20:59:11
  */
 public class OauthClientAuthResponse extends IotResponse {
   private IccClientToken data;

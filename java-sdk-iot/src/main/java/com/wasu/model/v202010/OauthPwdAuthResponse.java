@@ -7,7 +7,7 @@ import com.wasu.http.IotTokenResponse;
  * 密码认证授权
  *
  * @author liulihai
- * @since 1.0.0 2020-10-24 20:59:11
+ * @since 2020-10-24 20:59:11
  */
 public class OauthPwdAuthResponse extends IotResponse {
   private IotTokenResponse  data;

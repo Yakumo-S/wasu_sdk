@@ -9,7 +9,7 @@ import com.wasu.iot.exception.ClientException;
  * 客户端认证授权，方法GET和POST，数据使用form
  *
  * @author liulihai
- * @since 1.0.0 2020-10-24 20:59:11
+ * @since 2020-10-24 20:59:11
  */
 public class OauthClientAuthRequest extends AbstractIccRequest<OauthClientAuthResponse> {
   /** 授权类型，固定值：client_credentials */

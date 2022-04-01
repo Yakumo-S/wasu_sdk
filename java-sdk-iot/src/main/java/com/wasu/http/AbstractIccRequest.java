@@ -6,7 +6,7 @@ import java.util.Map;
 
 /**
  * @author liulihai
- * @since 1.0.0 2020-10-24 20:59:11
+ * @since 2020-10-24 20:59:11
  */
 public abstract class AbstractIccRequest<T extends IotResponse> extends IotHttpRequest {
   public AbstractIccRequest(String url, Method method) throws ClientException {

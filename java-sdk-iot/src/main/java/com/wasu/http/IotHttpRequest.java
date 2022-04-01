@@ -18,7 +18,7 @@ import java.util.Map;
  * <p>post 如不设置body内容，方法contentType默认是application/x-www-form-urlencoded，
  *
  * @author liulihai
- * @since 1.0.0 2020-10-24 20:59:11
+ * @since 2020-10-24 20:59:11
  */
 public class IotHttpRequest extends AbstractHttpRequest {
   private static final Log logger = LogFactory.get();

@@ -8,7 +8,7 @@ import com.wasu.profile.GrantType;
  * 默认请求类
  *
  * @author liulihai
- * @since 1.0.0 2020-10-24 20:59:11
+ * @since 2020-10-24 20:59:11
  */
 public interface IClient {
 

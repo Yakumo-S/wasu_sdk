@@ -15,7 +15,7 @@ import com.wasu.unmarshaller.Unmarshaller;
 
 /**
  * @author liulihai
- * @since 1.0.0 2020-10-24 20:59:11
+ * @since 2020-10-24 20:59:11
  */
 public class DefaultClient extends AbstractIClient {
 
@@ -55,7 +55,7 @@ public class DefaultClient extends AbstractIClient {
   public DefaultClient(
       String host, String username, String password, String pwdClientId, String pwdClientSecret)
       throws ClientException {
-    init(host, username, password, pwdClientId, pwdClientSecret);
+    init(host, username, password, "web", "web");
   }
 
   private void init(String host, String clientId, String clientSecret) {
@@ -64,7 +64,7 @@ public class DefaultClient extends AbstractIClient {
 
   private void init(
       String host, String username, String password, String pwdClientId, String pwdClientSecret) {
-    init(host, username, password, pwdClientId, pwdClientSecret, GrantType.password);
+    init(host, username, password, "web", "web", GrantType.password);
   }
 
   private void init(

@@ -30,7 +30,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
  * 单例，获取access_token,刷新access_token，登录状态保活
  *
  * @author liulihai
- * @since 1.0.0 2020-10-24 20:59:11
+ * @since 2020-10-24 20:59:11
  */
 public class TokenHandleSingle {
 
