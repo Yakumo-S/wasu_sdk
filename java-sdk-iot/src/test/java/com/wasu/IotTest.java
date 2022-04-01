@@ -4,6 +4,7 @@ import com.wasu.http.IotClient;
 import com.wasu.http.IotClientImpl;
 import com.wasu.hutool.core.thread.ThreadUtil;
 import com.wasu.hutool.core.util.RandomUtil;
+import com.wasu.hutool.log.LogFactory;
 import com.wasu.iot.exception.ClientException;
 import com.wasu.model.v202010.GeneralResponse;
 import com.wasu.model.v202203.CreateDeviceRequest;
@@ -43,7 +44,7 @@ public class IotTest {
     request.setLatitude("31.207561");
     request.setLongitude("120.23475");
     String reso = iotClient.register(request);
-    System.out.println();
+    System.out.println(reso);
     ThreadUtil.sleep(5000);
   }
 
