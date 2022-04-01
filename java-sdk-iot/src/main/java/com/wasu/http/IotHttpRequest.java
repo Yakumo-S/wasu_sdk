@@ -1,5 +1,6 @@
 package com.wasu.http;
 
+import com.wasu.hutool.core.util.StrUtil;
 import com.wasu.hutool.http.ContentType;
 import com.wasu.hutool.http.HttpRequest;
 import com.wasu.hutool.http.HttpResponse;
@@ -265,6 +266,9 @@ public class IotHttpRequest extends AbstractHttpRequest {
     HttpResponse response = httpRequest.execute();
     String resultBody = response.body();
     if (response.getStatus() != HttpStatus.HTTP_OK) {
+      if(StrUtil.isNotBlank(resultBody)&&resultBody.contains("invalid_token")){
+
+      }
       logger.warn(
           "request url [{}] an unexpected error ,origin response {}",
           httpRequest.getUrl(),

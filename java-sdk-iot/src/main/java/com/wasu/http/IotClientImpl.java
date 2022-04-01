@@ -82,9 +82,10 @@ public class IotClientImpl implements IotClient {
           Method.POST);
       Map<String, Object> msg = new HashMap<>();
       msg.put("properties", properties);
-      request.body(JSONUtil.toJsonStr(msg));
+      String body=JSONUtil.toJsonStr(msg);
+      request.body(body);
       re = iClient.doAction(request, GeneralResponse.class);
-      logger.info("设备属性上报={} 返回={}", deviceId, re);
+      logger.info("设备编号={} 上报属性={} 返回={}", deviceId,body, re);
     } catch (ClientException e) {
       e.printStackTrace();
     }
@@ -107,9 +108,10 @@ public class IotClientImpl implements IotClient {
       if (!CollectionUtil.isEmpty(data)) {
         msg.put("data", data);
       }
-      request.body(JSONUtil.toJsonStr(msg));
+      String body=JSONUtil.toJsonStr(msg);
+      request.body(body);
       re = iClient.doAction(request, GeneralResponse.class);
-      logger.info("设备上报事件={} 返回={}", deviceId, re);
+      logger.info("设备编号={} 上报事件={} 返回={}", deviceId,body, re);
     } catch (ClientException e) {
       e.printStackTrace();
     }

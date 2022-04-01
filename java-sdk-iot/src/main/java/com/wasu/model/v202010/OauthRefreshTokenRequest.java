@@ -17,10 +17,11 @@ public class OauthRefreshTokenRequest extends AbstractIccRequest<OauthRefreshTok
   private String client_id;
   private String client_secret;
   private String refresh_token;
+  private String access_token;
 
   public OauthRefreshTokenRequest() throws ClientException {
     super(
-        OauthConstant.url(OauthConstant.OAUTH_URL_REFRESH_TOKEN_POST), Method.POST, Boolean.FALSE);
+        OauthConstant.url(OauthConstant.OAUTH_URL_REFRESH_TOKEN_POST), Method.POST, Boolean.TRUE);
   }
 
   @Override
@@ -34,7 +35,18 @@ public class OauthRefreshTokenRequest extends AbstractIccRequest<OauthRefreshTok
 
   public void setGrant_type(String grant_type) {
     this.grant_type = grant_type;
-    putBodyParameter("grant_type", grant_type);
+    form("grant_type", grant_type);
+  }
+
+  public String getAccess_token() {
+    return access_token;
+  }
+
+  public void setAccess_token(String access_token) {
+    this.access_token = access_token;
+    form("access_token", grant_type);
+    form("scope", "all");
+
   }
 
   public String getClient_id() {
@@ -43,7 +55,7 @@ public class OauthRefreshTokenRequest extends AbstractIccRequest<OauthRefreshTok
 
   public void setClient_id(String client_id) {
     this.client_id = client_id;
-    putBodyParameter("client_id", client_id);
+    form("client_id", client_id);
   }
 
   public String getClient_secret() {
@@ -52,7 +64,7 @@ public class OauthRefreshTokenRequest extends AbstractIccRequest<OauthRefreshTok
 
   public void setClient_secret(String client_secret) {
     this.client_secret = client_secret;
-    putBodyParameter("client_secret", client_secret);
+    form("client_secret", client_secret);
   }
 
   public String getRefresh_token() {
@@ -61,6 +73,6 @@ public class OauthRefreshTokenRequest extends AbstractIccRequest<OauthRefreshTok
 
   public void setRefresh_token(String refresh_token) {
     this.refresh_token = refresh_token;
-    putBodyParameter("refresh_token", refresh_token);
+    form("refresh_token", refresh_token);
   }
 }

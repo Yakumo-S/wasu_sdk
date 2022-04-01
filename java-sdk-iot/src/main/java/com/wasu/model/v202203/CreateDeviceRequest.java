@@ -3,6 +3,7 @@ package com.wasu.model.v202203;
 import com.wasu.constant.OauthConstant;
 import com.wasu.http.AbstractIccRequest;
 import com.wasu.hutool.http.Method;
+import com.wasu.hutool.json.JSONUtil;
 import com.wasu.iot.exception.ClientException;
 import com.wasu.model.v202010.GeneralResponse;
 import java.util.HashMap;
@@ -103,5 +104,10 @@ public class CreateDeviceRequest extends AbstractIccRequest<GeneralResponse> {
 
   public String getLongitude() {
     return longitude;
+  }
+
+  @Override
+  public String toString() {
+    return JSONUtil.toJsonStr(bodyParameters);
   }
 }

@@ -22,7 +22,7 @@ public class OauthConstant {
    * 刷新token地址
    */
   public static final String OAUTH_URL_REFRESH_TOKEN_POST =
-      "/oauth/extend/refresh/token";
+      "/oauth/token";
 
   public static String version = "1.0.0";
   private static boolean initVersionFromBrm = Boolean.FALSE;

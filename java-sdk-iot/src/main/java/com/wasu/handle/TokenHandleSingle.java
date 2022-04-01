@@ -43,7 +43,7 @@ public class TokenHandleSingle {
   /**
    * token刷新间隔 30s
    */
-  private static final long FRESH_TOKEN_INTERVAL = 30 * 1000;
+  private static final long FRESH_TOKEN_INTERVAL = 15 * 1000;
   /**
    * 线程刷新token和保活
    */
@@ -203,7 +203,7 @@ public class TokenHandleSingle {
    * @param refreshToken 刷新fresh_token
    * @return IccTokenResponse.IccToken
    */
-  public IotTokenResponse refreshToken(GrantType grantType, String refreshToken) {
+  public IotTokenResponse refreshToken(GrantType grantType,String accessToken, String refreshToken) {
     try {
       IClient iClient = new DefaultClient();
       // 刷新token
@@ -213,16 +213,16 @@ public class TokenHandleSingle {
         refreshTokenRequest.setClient_secret("web");
         refreshTokenRequest.setGrant_type(GrantType.refresh_token.name());
         refreshTokenRequest.setRefresh_token(refreshToken);
+        refreshTokenRequest.setAccess_token(accessToken);
         OauthRefreshTokenResponse refreshTokenResponse =
             iClient.doAction(refreshTokenRequest, refreshTokenRequest.getResponseClass());
-        OauthRefreshTokenResponse.IccReFreshToken freshToken = refreshTokenResponse.getData();
         IotTokenResponse iotToken = new IotTokenResponse();
-        iotToken.setTtl(System.currentTimeMillis() + (freshToken.getExpires_in() * 1000));
-        iotToken.setAccess_token(freshToken.getAccess_token());
-        iotToken.setExpires_in(freshToken.getExpires_in());
-        iotToken.setToken_type(freshToken.getToken_type());
-        iotToken.setRefresh_token(freshToken.getRefresh_token());
-        iotToken.setScope(freshToken.getScope());
+        iotToken.setTtl(System.currentTimeMillis() + (refreshTokenResponse.getExpires_in() * 1000));
+        iotToken.setAccess_token(refreshTokenResponse.getAccess_token());
+        iotToken.setExpires_in(refreshTokenResponse.getExpires_in());
+        iotToken.setToken_type(refreshTokenResponse.getToken_type());
+        iotToken.setRefresh_token(refreshTokenResponse.getRefresh_token());
+        iotToken.setScope(refreshTokenResponse.getScope());
         return iotToken;
       }
       /*客户端没有fresh_token 字段，无法调用刷新token接口，故只能重新获取*/
@@ -243,9 +243,9 @@ public class TokenHandleSingle {
         IotTokenResponse token = entry.getValue();
         Long currentTime = System.currentTimeMillis();
         /** 如果时间还剩120s，则刷新token */
-        if (token.getTtl() - currentTime <= 120 * 1000) {
+        if (token.getTtl() - currentTime <= 600 * 1000) {
           GrantType grantType = deGrantType(entry.getKey());
-          token = refreshToken(grantType, token.getRefresh_token());
+          token = refreshToken(grantType,token.getAccess_token(), token.getRefresh_token());
           if (token != null) {
             tokenMap.put(entry.getKey(), token);
             logger.info("refresh token success, [{}],token=[{}]", entry.getKey(), token);
